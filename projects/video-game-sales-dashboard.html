@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Game Sales Analytics Dashboard | Birate Kabanza Arthur</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      :root { --card: rgba(255, 255, 255, 0.75); }
+
+      .page {
+        background:
+          radial-gradient(1000px 600px at 15% -10%, rgba(245, 158, 11, 0.10), transparent 60%),
+          radial-gradient(900px 500px at 90% 0%, rgba(59, 130, 246, 0.08), transparent 60%),
+          linear-gradient(180deg, #f3f5f9 0%, #eef2f7 60%, #f6f7fb 100%);
+      }
+
+      .card {
+        background: var(--card);
+        backdrop-filter: blur(12px);
+        box-shadow:
+          0 14px 30px rgba(2, 6, 23, 0.08),
+          0 1px 0 rgba(255, 255, 255, 0.8) inset;
+      }
+
+      .hairline {
+        height: 1px;
+        background: linear-gradient(to right, transparent, rgba(15, 23, 42, 0.15), transparent);
+      }
+    </style>
+  </head>
+
+  <body class="min-h-screen page font-[Inter] text-slate-800">
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 bg-white/70 backdrop-blur border-b border-slate-200/70">
+      <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+        <a href="../index.html" class="flex items-center gap-3">
+          <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-slate-900 text-white font-semibold">
+            BA
+          </span>
+          <div class="leading-tight">
+            <p class="font-semibold text-slate-900">Birate Kabanza Arthur</p>
+            <p class="text-xs text-slate-600">Data Analysis • Data Visualization</p>
+          </div>
+        </a>
+
+        <nav class="flex items-center gap-2">
+          <a href="../index.html" class="rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-100">Home</a>
+          <a href="../projects.html" class="rounded-lg px-3 py-2 text-sm bg-slate-900 text-white">Projects</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="mx-auto max-w-6xl px-4 pb-16 pt-16">
+      <section class="card rounded-2xl p-8 sm:p-12">
+
+        <!-- Top heading stays full width -->
+        <div>
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <p class="text-sm text-slate-600">
+              <a href="../projects.html" class="hover:text-slate-900">Projects</a>
+              <span class="mx-2 text-slate-300">/</span>
+              <span class="text-slate-900 font-medium">Video Game Sales Analytics Dashboard</span>
+            </p>
+
+            <span class="text-xs uppercase tracking-wide font-semibold text-slate-500">
+              Business Intelligence • Tableau
+            </span>
+          </div>
+
+          <h1 class="mt-5 text-4xl sm:text-5xl font-['Playfair_Display'] font-semibold text-slate-900">
+            Video Game Sales Analytics Dashboard
+          </h1>
+
+          <p class="mt-4 max-w-3xl text-slate-600 font-light leading-relaxed">
+            This project analyzes global video game sales data to uncover industry trends, regional performance differences,
+            genre popularity, and publisher dominance. The goal was to transform raw historical sales data into interactive
+            dashboards that support strategic market analysis and competitive benchmarking.
+          </p>
+
+          <!-- Important Note -->
+          <div class="mt-6 rounded-lg border border-slate-200 bg-slate-50 px-5 py-4">
+            <p class="text-sm text-slate-700 font-medium">
+              Note: All sales figures and revenue measures in this project are expressed in millions of units (M).
+            </p>
+          </div>
+
+          <div class="mt-10 hairline"></div>
+        </div>
+
+        <!-- TWO-COLUMN LAYOUT -->
+        <div class="mt-10 grid gap-10 lg:grid-cols-[380px_1fr]">
+
+          <!-- LEFT COLUMN (STICKY SIDEBAR) -->
+          <aside class="lg:sticky lg:top-24 self-start space-y-8">
+
+            <!-- OBJECTIVE -->
+            <article class="rounded-xl bg-white p-8 shadow-sm">
+              <h2 class="text-xl font-semibold text-slate-900">Project Objective</h2>
+              <p class="mt-4 text-sm text-slate-600 font-light leading-relaxed">
+                The primary objective was to build a comprehensive analytical solution that supports strategic and competitive
+                decision-making across the global gaming market.
+              </p>
+
+              <ul class="mt-5 space-y-2 text-sm text-slate-600 font-light list-disc pl-5">
+                <li>Measures overall market size and performance</li>
+                <li>Identifies top-performing games and genres</li>
+                <li>Compares sales performance across major regions</li>
+                <li>Evaluates publisher-level market concentration</li>
+                <li>Supports strategic and competitive decision-making</li>
+              </ul>
+            </article>
+
+            <!-- TOOLS -->
+            <article class="rounded-xl bg-white p-8 shadow-sm">
+              <h2 class="text-xl font-semibold text-slate-900">Tools & Technologies</h2>
+
+              <ul class="mt-5 space-y-2 text-sm text-slate-600 font-light">
+                <li><span class="font-medium text-slate-900">Tableau Desktop</span> — KPIs, parameters, filtering, treemaps, dual-axis charts</li>
+                <li><span class="font-medium text-slate-900">Tableau Prep</span> — cleaning, transformation, aggregation, modeling</li>
+                <li><span class="font-medium text-slate-900">Calculated fields</span> — custom metrics & logic</li>
+                <li><span class="font-medium text-slate-900">Pareto analysis</span> — cumulative % & contribution logic</li>
+                <li><span class="font-medium text-slate-900">Top-N controls</span> — interactive ranking exploration</li>
+              </ul>
+            </article>
+
+            <!-- QUICK LINKS (same content, just placed here) -->
+            <article class="rounded-xl bg-white p-8 shadow-sm">
+              <h2 class="text-xl font-semibold text-slate-900">Links</h2>
+
+              <div class="mt-4 flex flex-col gap-3 text-sm font-medium">
+                <a
+                  href="../projects.html"
+                  class="text-slate-900 underline underline-offset-4 hover:text-slate-700 transition"
+                >
+                  ← Back to Projects
+                </a>
+
+                <!-- Replace when you have real link -->
+                <a
+                  href="https://public.tableau.com/app/profile/birate.arthur/vizzes"
+                  class="text-slate-500 hover:text-slate-900 transition"
+                >
+                  Tableau Public
+                </a>
+              </div>
+            </article>
+
+          </aside>
+
+          <!-- RIGHT COLUMN (MAIN CONTENT) -->
+          <div class="space-y-10">
+
+            <!-- DASHBOARDS -->
+            <section id="dashboards" class="rounded-xl bg-white p-8 shadow-sm">
+              <h2 class="text-2xl font-semibold text-slate-900">Dashboards</h2>
+              <p class="mt-2 text-sm text-slate-600 font-light">
+                Three dashboards designed for executive overview, regional performance analysis, and publisher benchmarking.
+              </p>
+
+              <!-- Dashboard 1 -->
+              <section class="mt-8 rounded-xl bg-slate-50 p-8 border border-slate-200">
+                <div class="flex flex-wrap items-center justify-between gap-4">
+                  <h3 class="text-xl font-semibold text-slate-900">Global Sales Overview Dashboard</h3>
+                  <span class="text-xs uppercase tracking-wide font-semibold text-slate-500">Executive Summary</span>
+                </div>
+
+                <div class="mt-6 overflow-hidden rounded-xl border border-slate-200 bg-white">
+                  <img
+                    src="../assets/Game_dashboards/Global_Sales_dash.png"
+                    alt="Global Sales Overview Dashboard - Tableau"
+                    class="w-full h-auto"
+                  />
+                </div>
+
+                <p class="mt-6 text-sm text-slate-600 font-light leading-relaxed">
+                  The Global Sales Overview Dashboard serves as the executive summary of the entire video game market. Its primary purpose is to provide a macro-level understanding of industry performance using consolidated KPIs and trend analysis.
+                </p>
+
+                <p class="mt-3 text-sm text-slate-600 font-light leading-relaxed">
+                  This dashboard displays total global sales (in millions), total number of games released, and average sales per game (in millions), giving immediate visibility into overall market scale and productivity.
+                </p>
+                <p class="mt-3 text-sm text-slate-600 font-light leading-relaxed">
+                  A ranked bar chart highlights the top-selling games, allowing stakeholders to identify blockbuster titles that significantly influenced total market revenue. The genre distribution visualization shows which categories dominate sales contribution, helping identify long-term consumer preferences.
+                </p>
+                <p class="mt-3 text-sm text-slate-600 font-light leading-relaxed">
+                  Additionally, a yearly sales trend line illustrates the industry’s growth trajectory, peak performance years, and subsequent decline phases. This time-series analysis supports strategic forecasting and historical performance evaluation.
+                </p>
+                <p class="mt-3 text-sm text-slate-600 font-light leading-relaxed">
+                  Overall, this dashboard answers the question:
+                  How has the global video game market performed over time, and what are the key drivers of revenue?
+                </p>
+              </section>
+
+              <!-- Dashboard 2 -->
+              <section class="mt-8 rounded-xl bg-slate-50 p-8 border border-slate-200">
+                <div class="flex flex-wrap items-center justify-between gap-4">
+                  <h3 class="text-xl font-semibold text-slate-900">Regional Sales Breakdown Dashboard</h3>
+                  <span class="text-xs uppercase tracking-wide font-semibold text-slate-500">Regional Insights</span>
+                </div>
+
+                <div class="mt-6 overflow-hidden rounded-xl border border-slate-200 bg-white">
+                  <img
+                    src="../assets/Game_dashboards/Regional_dash.png"
+                    alt="Regional Sales Breakdown Dashboard - Tableau"
+                    class="w-full h-auto"
+                  />
+                </div>
+
+                <p class="mt-6 text-sm text-slate-600 font-light leading-relaxed">
+                  The Regional Sales Dashboard focuses on comparing performance across North America, Europe, and Japan, with all sales values displayed in millions.
+                </p>
+
+                <p class="mt-3 text-sm text-slate-600 font-light leading-relaxed">
+                  Its purpose is to analyze how revenue is geographically distributed and to uncover differences in consumer demand across markets. By visualizing top-selling games per region and allowing dynamic comparisons, this dashboard highlights regional preferences and performance gaps.
+                </p>
+                <p class="mt-3 text-sm text-slate-600 font-light leading-relaxed">
+                  For example, certain franchises may dominate North America but show relatively lower performance in Japan. These insights are critical for localization strategies, regional marketing investments, and product launch planning.
+                </p>
+                <p class="mt-3 text-sm text-slate-600 font-light leading-relaxed">
+                  This dashboard answers the question:
+                  Where is revenue concentrated geographically, and how do consumer preferences differ across regions?
+                </p>
+              </section>
+
+              <!-- Dashboard 3 -->
+              <section class="mt-8 rounded-xl bg-slate-50 p-8 border border-slate-200">
+                <div class="flex flex-wrap items-center justify-between gap-4">
+                  <h3 class="text-xl font-semibold text-slate-900">Publishers Insight Dashboard</h3>
+                  <span class="text-xs uppercase tracking-wide font-semibold text-slate-500">Competitive Benchmarking</span>
+                </div>
+
+                <div class="mt-6 overflow-hidden rounded-xl border border-slate-200 bg-white">
+                  <img
+                    src="../assets/Game_dashboards/Publisher_dash.png"
+                    alt="Publishers Insight Dashboard - Tableau"
+                    class="w-full h-auto"
+                  />
+                </div>
+
+                <p class="mt-6 text-sm text-slate-600 font-light leading-relaxed">
+                  The Publishers Insight Dashboard evaluates competitive positioning and market concentration within the industry.
+                </p>
+
+                <p class="mt-3 text-sm text-slate-600 font-light leading-relaxed">
+                  A treemap visualization is used to represent publisher market share, where each rectangle’s size corresponds to total global sales (in millions). This visual structure allows immediate identification of dominant publishers, as larger rectangles represent higher revenue contribution.
+                </p>
+                <p class="mt-6 text-sm text-slate-600 font-light leading-relaxed">
+                  Unlike a heatmap (which typically emphasizes intensity through color), the treemap emphasizes proportional market share through area size, making it ideal for demonstrating revenue concentration and competitive hierarchy.
+                </p>
+
+                <p class="mt-6 text-sm text-slate-600 font-light leading-relaxed">
+                  In addition to the treemap, the dashboard includes ranked comparisons and cumulative percentage analysis (Pareto principle) to show how a relatively small number of publishers generate a large share of total market sales.
+                </p>
+
+                <p class="mt-6 text-sm text-slate-600 font-light leading-relaxed">
+                  It answers the question:
+                  Who controls the largest share of the gaming market, and how concentrated is industry revenue?
+                </p>
+              </section>
+
+            </section>
+
+            <!-- DATA MODEL -->
+            <section id="data-model" class="rounded-xl bg-white p-10 shadow-sm">
+              <div class="flex flex-wrap items-center justify-between gap-4">
+                <h2 class="text-2xl font-semibold text-slate-900">Data Model Explanation</h2>
+                <span class="text-xs uppercase tracking-wide font-semibold text-slate-500">Star Schema Design</span>
+              </div>
+
+              <p class="mt-4 text-slate-600 font-light leading-relaxed max-w-3xl">
+                This data model follows a star schema design, optimized for analytical queries
+                and dashboard performance in Tableau. At the center of the model is the
+                <span class="font-medium text-slate-900">Fact_Sales</span> table, surrounded by
+                multiple dimension tables that provide descriptive business context.
+              </p>
+
+              <div class="mt-8 overflow-hidden rounded-xl border border-slate-200 bg-slate-50">
+                <img
+                  src="../assets/Game_dashboards/data_model.png"
+                  alt="Star Schema Data Model – Video Game Sales Project"
+                  class="w-full h-auto"
+                />
+              </div>
+
+              <div class="mt-10 grid gap-10 md:grid-cols-2">
+                <article>
+                  <h3 class="text-lg font-semibold text-slate-900">Fact Table: Fact_Sales</h3>
+                  <p class="mt-3 text-sm text-slate-600 font-light leading-relaxed">
+                    The Fact_Sales table is the core transactional table containing measurable business metrics:
+                  </p>
+                  <ul class="mt-3 space-y-2 text-sm text-slate-600 font-light list-disc pl-5">
+                    <li>Global Sales (in millions)</li>
+                    <li>Regional Sales (NA, EU, JP – in millions)</li>
+                    <li>Additional quantitative performance metrics</li>
+                  </ul>
+                  <p class="mt-3 text-sm text-slate-600 font-light leading-relaxed">
+                    Each record represents a specific game’s sales performance and includes
+                    foreign keys linking to dimension tables, enabling multidimensional analysis.
+                  </p>
+                </article>
+
+                <article>
+                  <h3 class="text-lg font-semibold text-slate-900">Dimension: Dim_Calendar</h3>
+                  <p class="mt-3 text-sm text-slate-600 font-light leading-relaxed">
+                    Enables time-based analysis through year, month, and hierarchical time structures.
+                    Supports trend analysis, year-over-year comparisons, and time-series visualizations.
+                  </p>
+                </article>
+
+                <article>
+                  <h3 class="text-lg font-semibold text-slate-900">Dimension: Dim_Games</h3>
+                  <p class="mt-3 text-sm text-slate-600 font-light leading-relaxed">
+                    Contains descriptive information about each game, including title and related attributes.
+                    Enables filtering, ranking, and Top-N performance analysis.
+                  </p>
+                </article>
+
+                <article>
+                  <h3 class="text-lg font-semibold text-slate-900">Dimension: Dim_Genre</h3>
+                  <p class="mt-3 text-sm text-slate-600 font-light leading-relaxed">
+                    Categorizes games into segments such as Action, Shooter, Role-Playing, Sports, and Platform.
+                    Supports genre-level performance analysis and market share evaluation.
+                  </p>
+                </article>
+
+                <article>
+                  <h3 class="text-lg font-semibold text-slate-900">Dimension: Dim_Platforms</h3>
+                  <p class="mt-3 text-sm text-slate-600 font-light leading-relaxed">
+                    Provides information about gaming platforms including PlayStation, Xbox, Nintendo, and PC.
+                    Enables platform-level comparisons and ecosystem impact analysis.
+                  </p>
+                </article>
+
+                <article>
+                  <h3 class="text-lg font-semibold text-slate-900">Dimension: Dim_Publisher</h3>
+                  <p class="mt-3 text-sm text-slate-600 font-light leading-relaxed">
+                    Provides company-level context including publisher name and grouping.
+                    Supports competitive benchmarking, market concentration analysis, and revenue share evaluation.
+                  </p>
+                </article>
+              </div>
+
+              <div class="mt-12 border-t border-slate-200 pt-8">
+                <h3 class="text-lg font-semibold text-slate-900">Why This Star Schema Is Effective</h3>
+                <ul class="mt-4 space-y-3 text-sm text-slate-600 font-light list-disc pl-5">
+                  <li>Separates measurable metrics (facts) from descriptive attributes (dimensions)</li>
+                  <li>Improves query performance and scalability</li>
+                  <li>Enables flexible slicing and dicing across time, genre, region, platform, and publisher</li>
+                  <li>Simplifies calculated measures and aggregations in Tableau</li>
+                </ul>
+              </div>
+            </section>
+
+          </div>
+        </div>
+      </section>
+
+      <footer class="mt-16 text-sm text-slate-500">
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <p>© <span id="year"></span> Birate Kabanza Arthur.</p>
+          <div class="flex gap-4">
+            <a class="hover:text-slate-900" href="#">Email</a>
+            <a class="hover:text-slate-900" href="#">LinkedIn</a>
+            <a class="hover:text-slate-900" href="#">GitHub</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Superstore Sales & Shipping Analytics | Birate Kabanza Arthur</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      :root { --card: rgba(255, 255, 255, 0.75); }
+
+      .page {
+        background:
+          radial-gradient(1000px 600px at 15% -10%, rgba(245, 158, 11, 0.10), transparent 60%),
+          radial-gradient(900px 500px at 90% 0%, rgba(59, 130, 246, 0.08), transparent 60%),
+          linear-gradient(180deg, #f3f5f9 0%, #eef2f7 60%, #f6f7fb 100%);
+      }
+
+      .card {
+        background: var(--card);
+        backdrop-filter: blur(12px);
+        box-shadow:
+          0 14px 30px rgba(2, 6, 23, 0.08),
+          0 1px 0 rgba(255, 255, 255, 0.8) inset;
+      }
+
+      .hairline {
+        height: 1px;
+        background: linear-gradient(to right, transparent, rgba(15, 23, 42, 0.15), transparent);
+      }
+    </style>
+  </head>
+
+  <body class="min-h-screen page font-[Inter] text-slate-800">
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 bg-white/70 backdrop-blur border-b border-slate-200/70">
+      <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+        <a href="../index.html" class="flex items-center gap-3">
+          <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-slate-900 text-white font-semibold">
+            BA
+          </span>
+          <div class="leading-tight">
+            <p class="font-semibold text-slate-900">Birate Kabanza Arthur</p>
+            <p class="text-xs text-slate-600">Data Analysis • Data Visualization</p>
+          </div>
+        </a>
+
+        <nav class="flex items-center gap-2">
+          <a href="../index.html" class="rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-100">Home</a>
+          <a href="../projects.html" class="rounded-lg px-3 py-2 text-sm bg-slate-900 text-white">Projects</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="mx-auto max-w-6xl px-4 pb-16 pt-16">
+      <section class="card rounded-2xl p-8 sm:p-12">
+        <!-- Top heading (full width) -->
+        <div>
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <p class="text-sm text-slate-600">
+              <a href="../projects.html" class="hover:text-slate-900">Projects</a>
+              <span class="mx-2 text-slate-300">/</span>
+              <span class="text-slate-900 font-medium">Superstore Sales & Shipping Analytics</span>
+            </p>
+
+            <span class="text-xs uppercase tracking-wide font-semibold text-slate-500">
+              Data Visualization • Power BI
+            </span>
+          </div>
+
+          <h1 class="mt-5 text-4xl sm:text-5xl font-['Playfair_Display'] font-semibold text-slate-900">
+            Superstore Sales & Shipping Analytics – Power BI
+          </h1>
+
+          <div class="mt-6 flex flex-wrap gap-3">
+            <!-- Replace links later -->
+            <a
+              href="https://www.youtube.com/watch?v=RftK98wx4Vw"
+              class="rounded-lg bg-white px-4 py-2 text-sm font-medium text-slate-900 shadow-sm ring-1 ring-slate-200 hover:bg-slate-50"
+            >
+              Watch Demo
+            </a>
+            <a
+              href="../assets/Superstore/Business Intelligence Project Report Superstore.pdf" download
+              class="rounded-lg bg-white px-4 py-2 text-sm font-medium text-slate-900 shadow-sm ring-1 ring-slate-200 hover:bg-slate-50"
+            >
+              Project Report
+            </a>
+          </div>
+
+          <div class="mt-10 hairline"></div>
+        </div>
+
+        <!-- TWO-COLUMN LAYOUT -->
+        <div class="mt-10 grid gap-10 lg:grid-cols-[380px_1fr]">
+
+          <!-- LEFT COLUMN (STICKY SIDEBAR) -->
+          <aside class="lg:sticky lg:top-24 self-start space-y-8">
+
+            <!-- OBJECTIVE -->
+            <article class="rounded-xl bg-white p-8 shadow-sm">
+              <h2 class="text-xl font-semibold text-slate-900">Objective</h2>
+              <p class="mt-4 text-sm text-slate-600 font-light leading-relaxed">
+                This personal project aimed to build a complete business intelligence solution using Microsoft Power BI. The goal
+                was to analyze sales, profit, and shipping performance using a real-world dataset. The dashboard provides useful
+                information for different users, such as executives, sales managers, and supply chain teams. The project also helped
+                to improve skills in data analysis, visualization, and dashboard design.
+              </p>
+            </article>
+
+            <!-- TECHNOLOGIES -->
+            <article class="rounded-xl bg-white p-8 shadow-sm">
+              <h2 class="text-xl font-semibold text-slate-900">Technologies Used</h2>
+              <ul class="mt-5 space-y-2 text-sm text-slate-600 font-light list-disc pl-5">
+                <li>Power BI</li>
+                <li>DAX</li>
+                <li>Data Modeling</li>
+                <li>Data Visualization</li>
+              </ul>
+            </article>
+
+            <!-- LINKS -->
+            <article class="rounded-xl bg-white p-8 shadow-sm">
+              <h2 class="text-xl font-semibold text-slate-900">Links</h2>
+              <div class="mt-4 flex flex-col gap-3 text-sm font-medium">
+                <a
+                  href="../projects.html"
+                  class="text-slate-900 underline underline-offset-4 hover:text-slate-700 transition"
+                >
+                  ← Back to Projects
+                </a>
+              </div>
+            </article>
+
+          </aside>
+
+          <!-- RIGHT COLUMN -->
+          <div class="space-y-10">
+
+           <!-- DASHBOARD SCREENSHOTS -->
+<section class="rounded-xl bg-white p-8 shadow-sm">
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <h2 class="text-2xl font-semibold text-slate-900">Dashboard Screenshots</h2>
+      <p class="text-sm text-slate-500 font-light">Click an image to view full size.</p>
+    </div>
+  
+    <p class="mt-2 text-sm text-slate-600 font-light">
+      Two example views from the Power BI report.
+    </p>
+  
+    <div class="mt-6 space-y-6">
+      <!-- Big Image 1 -->
+      <a href="../assets/Superstore/sp_1.png" target="_blank" class="block">
+        <div class="overflow-hidden rounded-xl border border-slate-200 bg-slate-50">
+          <img
+            src="../assets/Superstore/sp_1.png"
+            alt="Superstore Dashboard Screenshot 1"
+            class="w-full h-auto"
+          />
+        </div>
+      </a>
+  
+      <!-- Big Image 2 -->
+      <a href="../assets/Superstore/sp_2.png" target="_blank" class="block">
+        <div class="overflow-hidden rounded-xl border border-slate-200 bg-slate-50">
+          <img
+            src="../assets/Superstore/sp_2.png"
+            alt="Superstore Dashboard Screenshot 2"
+            class="w-full h-auto"
+          />
+        </div>
+      </a>
+    </div>
+  </section>
+
+            <!-- DATASET -->
+            <section class="rounded-xl bg-white p-8 shadow-sm">
+              <h2 class="text-2xl font-semibold text-slate-900">Dataset</h2>
+              <p class="mt-4 text-sm text-slate-600 font-light leading-relaxed">
+                The project used the Superstore dataset, a sample retail dataset with several years of U.S. sales data:
+              </p>
+
+              <ul class="mt-5 space-y-2 text-sm text-slate-600 font-light list-disc pl-5">
+                <li>Customer orders with dates, shipping priorities, and delivery times</li>
+                <li>Product categories and subcategories</li>
+                <li>Sales, discounts, quantities, and profit margins</li>
+                <li>Shipping information including modes and delays</li>
+                <li>Geographical data by region, state, and city</li>
+              </ul>
+            </section>
+
+            <!-- PROCESS -->
+            <section class="rounded-xl bg-white p-8 shadow-sm">
+              <h2 class="text-2xl font-semibold text-slate-900">Process</h2>
+
+              <ul class="mt-5 space-y-2 text-sm text-slate-600 font-light list-disc pl-5">
+                <li>Cleaned and organized the dataset for analysis</li>
+                <li>Created data models in Power BI</li>
+                <li>Designed dashboards for executives, sales managers, and supply chain teams</li>
+                <li>Created DAX measures to calculate key metrics (sales, profit margin, shipping efficiency)</li>
+                <li>Built interactive visuals, drill-through reports, and hierarchies for easy navigation</li>
+              </ul>
+            </section>
+
+            <!-- RESULTS -->
+            <section class="rounded-xl bg-white p-8 shadow-sm">
+              <h2 class="text-2xl font-semibold text-slate-900">Results</h2>
+
+              <p class="mt-4 text-sm text-slate-600 font-light leading-relaxed">
+                The final dashboard provided clear insights and supported interactive data exploration:
+              </p>
+
+              <ul class="mt-5 space-y-2 text-sm text-slate-600 font-light list-disc pl-5">
+                <li>Filter data by region, product category, and time period</li>
+                <li>Key metrics for executives: Total Sales, Profit Margin, Shipping Cost</li>
+                <li>Side-by-side views for high-level overview and detailed operational analysis</li>
+                <li>Improved decision-making for both strategic and operational tasks</li>
+              </ul>
+            </section>
+
+            <!-- KEY LEARNINGS -->
+            <section class="rounded-xl bg-white p-8 shadow-sm">
+              <h2 class="text-2xl font-semibold text-slate-900">Key Learnings</h2>
+
+              <ul class="mt-5 space-y-2 text-sm text-slate-600 font-light list-disc pl-5">
+                <li>How to prepare and structure raw data for analysis</li>
+                <li>Designing dashboards that are clear and easy to use</li>
+                <li>Experience with DAX, hierarchies, bookmarks, and formatting options</li>
+                <li>Creating dashboards for different users, from executives to operational teams</li>
+                <li>Balancing usability with detailed analytical information</li>
+              </ul>
+            </section>
+
+          </div>
+        </div>
+      </section>
+
+      <footer class="mt-16 text-sm text-slate-500">
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <p>© <span id="year"></span> Birate Kabanza Arthur.</p>
+          <div class="flex gap-4">
+            <a class="hover:text-slate-900" href="#">Email</a>
+            <a class="hover:text-slate-900" href="#">LinkedIn</a>
+            <a class="hover:text-slate-900" href="#">GitHub</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

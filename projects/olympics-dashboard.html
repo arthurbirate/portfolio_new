@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Olympics Dashboard (Qlik Sense) | Birate Kabanza Arthur</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      :root { --card: rgba(255, 255, 255, 0.75); }
+
+      .page {
+        background:
+          radial-gradient(1000px 600px at 15% -10%, rgba(245, 158, 11, 0.10), transparent 60%),
+          radial-gradient(900px 500px at 90% 0%, rgba(59, 130, 246, 0.08), transparent 60%),
+          linear-gradient(180deg, #f3f5f9 0%, #eef2f7 60%, #f6f7fb 100%);
+      }
+
+      .card {
+        background: var(--card);
+        backdrop-filter: blur(12px);
+        box-shadow:
+          0 14px 30px rgba(2, 6, 23, 0.08),
+          0 1px 0 rgba(255, 255, 255, 0.8) inset;
+      }
+
+      .hairline {
+        height: 1px;
+        background: linear-gradient(to right, transparent, rgba(15, 23, 42, 0.15), transparent);
+      }
+    </style>
+  </head>
+
+  <body class="min-h-screen page font-[Inter] text-slate-800">
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 bg-white/70 backdrop-blur border-b border-slate-200/70">
+      <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+        <a href="../index.html" class="flex items-center gap-3">
+          <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-slate-900 text-white font-semibold">
+            BA
+          </span>
+          <div class="leading-tight">
+            <p class="font-semibold text-slate-900">Birate Kabanza Arthur</p>
+            <p class="text-xs text-slate-600">Data Analysis • Data Visualization</p>
+          </div>
+        </a>
+
+        <nav class="flex items-center gap-2">
+          <a href="../index.html" class="rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-100">Home</a>
+          <a href="../projects.html" class="rounded-lg px-3 py-2 text-sm bg-slate-900 text-white">Projects</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="mx-auto max-w-6xl px-4 pb-16 pt-16">
+      <section class="card rounded-2xl p-8 sm:p-12">
+
+        <!-- Top heading (full width) -->
+        <div>
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <p class="text-sm text-slate-600">
+              <a href="../projects.html" class="hover:text-slate-900">Projects</a>
+              <span class="mx-2 text-slate-300">/</span>
+              <span class="text-slate-900 font-medium">Olympics Dashboard (Qlik Sense)</span>
+            </p>
+
+            <span class="text-xs uppercase tracking-wide font-semibold text-slate-500">
+              Business Intelligence • Qlik Sense
+            </span>
+          </div>
+
+          <h1 class="mt-5 text-4xl sm:text-5xl font-['Playfair_Display'] font-semibold text-slate-900">
+            Olympics Dashboard (Qlik Sense)
+          </h1>
+
+          <p class="mt-4 max-w-3xl text-slate-600 font-light leading-relaxed">
+            This project focused on building an interactive Qlik Sense dashboard analyzing Olympic Games data (1980–2022),
+            enabling medal tracking, gender analysis, sport-specific drilldowns, and athlete-level insights.
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            <!-- Replace links when ready -->
+            <a
+              href="https://youtu.be/UKvdi1y1dJQ"
+              class="rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-800 transition"
+            >
+              Watch Demo
+            </a>
+
+            <a
+              href="../assets/Olympic_dashboard/OlympicGames functional specification.pdf"  download
+              class="rounded-lg bg-white px-4 py-2 text-sm font-medium text-slate-900 ring-1 ring-slate-200 hover:bg-slate-50 transition"
+            >
+              Functional Specification Document
+            </a>
+          </div>
+
+          <div class="mt-10 hairline"></div>
+        </div>
+
+        <!-- TWO-COLUMN LAYOUT -->
+        <div class="mt-10 grid gap-10 lg:grid-cols-[380px_1fr]">
+
+          <!-- LEFT COLUMN (STICKY SIDEBAR) -->
+          <aside class="lg:sticky lg:top-24 self-start space-y-8">
+
+            <!-- OBJECTIVE -->
+            <article class="rounded-xl bg-white p-8 shadow-sm">
+              <h2 class="text-xl font-semibold text-slate-900">Objective</h2>
+
+              <p class="mt-4 text-sm text-slate-600 font-light leading-relaxed">
+                The objective of this project was to design an interactive Qlik Sense dashboard analyzing Olympic Games data (1980–2022).
+              </p>
+
+              <ul class="mt-5 space-y-2 text-sm text-slate-600 font-light list-disc pl-5">
+                <li>Trends in medal distribution by country and sport</li>
+                <li>Gender performance — male vs female participation and success</li>
+                <li>Sport-specific breakdowns with drill-through capabilities</li>
+                <li>Athlete profiles with medal history</li>
+                <li>Age and gender dynamics across events</li>
+              </ul>
+            </article>
+
+            <!-- TECHNOLOGIES -->
+            <article class="rounded-xl bg-white p-8 shadow-sm">
+              <h2 class="text-xl font-semibold text-slate-900">Technologies Used</h2>
+
+              <ul class="mt-5 space-y-2 text-sm text-slate-600 font-light">
+                <li><span class="font-medium text-slate-900">Qlik Sense</span></li>
+                <li><span class="font-medium text-slate-900">Qlik Load Script</span></li>
+                <li><span class="font-medium text-slate-900">Data Modeling</span></li>
+                <li><span class="font-medium text-slate-900">Set Analysis</span></li>
+                <li><span class="font-medium text-slate-900">Data Visualization</span></li>
+              </ul>
+            </article>
+
+            <!-- LINKS -->
+            <article class="rounded-xl bg-white p-8 shadow-sm">
+              <h2 class="text-xl font-semibold text-slate-900">Links</h2>
+
+              <div class="mt-4 flex flex-col gap-3 text-sm font-medium">
+                <a
+                  href="../projects.html"
+                  class="text-slate-900 underline underline-offset-4 hover:text-slate-700 transition"
+                >
+                  ← Back to Projects
+                </a>
+
+                <!-- Replace when you have real links -->
+                <a
+                  href="#"
+                  class="text-slate-500 hover:text-slate-900 transition"
+                >
+                  Watch Demo
+                </a>
+
+                <a
+                  href="#"
+                  class="text-slate-500 hover:text-slate-900 transition"
+                >
+                  Functional Specification Document
+                </a>
+              </div>
+            </article>
+
+          </aside>
+
+          <!-- RIGHT COLUMN (MAIN CONTENT) -->
+          <div class="space-y-10">
+
+           <!-- SCREENSHOTS -->
+<section class="rounded-xl bg-white p-8 shadow-sm">
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <h2 class="text-2xl font-semibold text-slate-900">Dashboard Screenshots</h2>
+      <span class="text-xs uppercase tracking-wide font-semibold text-slate-500">Qlik Sense</span>
+    </div>
+  
+    <p class="mt-2 text-sm text-slate-600 font-light">
+      Representative views from the multi-sheet dashboard application.
+    </p>
+  
+    <!-- BIG screenshots: one per row (full width) -->
+    <div class="mt-8 space-y-8">
+      <figure class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
+        <img
+          src="../assets/Olympic_dashboard/ol_1.png"
+          alt="Olympics Dashboard Screenshot 1"
+          class="w-full h-auto"
+        />
+      </figure>
+  
+      <figure class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
+        <img
+          src="../assets/Olympic_dashboard/ol_2.png"
+          alt="Olympics Dashboard Screenshot 2"
+          class="w-full h-auto"
+        />
+      </figure>
+    </div>
+  </section>
+
+            <!-- DATASET -->
+            <section class="rounded-xl bg-white p-8 shadow-sm">
+              <h2 class="text-2xl font-semibold text-slate-900">Dataset</h2>
+
+              <p class="mt-4 text-sm text-slate-600 font-light leading-relaxed">
+                The dataset covered athletes, medals, countries, sports, and events (1980–2022). Preprocessing was done in Qlik’s load editor:
+              </p>
+
+              <ul class="mt-5 space-y-2 text-sm text-slate-600 font-light list-disc pl-5">
+                <li>Standardized inconsistent country codes (e.g., USSR → Russia)</li>
+                <li>Cleaned duplicate or incomplete athlete records</li>
+                <li>Reshaped medal data for time-series analysis</li>
+                <li>Built a star-schema-like model for drill-down performance</li>
+              </ul>
+
+              <p class="mt-4 text-sm text-slate-600 font-light leading-relaxed">
+                These steps ensured smooth and responsive dashboard performance even with large datasets.
+              </p>
+            </section>
+
+            <!-- RESULTS -->
+            <section class="rounded-xl bg-white p-8 shadow-sm">
+              <h2 class="text-2xl font-semibold text-slate-900">Results</h2>
+
+              <p class="mt-4 text-sm text-slate-600 font-light leading-relaxed">
+                The final Qlik Sense application combined medal tracking, gender analysis, sport-specific insights, and athlete-level details:
+              </p>
+
+              <ul class="mt-5 space-y-2 text-sm text-slate-600 font-light list-disc pl-5">
+                <li>Dynamic medal tracking with filters for year, country, gender, and sport</li>
+                <li>Gender analysis highlighting increased female participation since the 1980s</li>
+                <li>Sport-specific trends showing shifts in dominance across athletics, swimming, and gymnastics</li>
+                <li>Athlete profiles with medal totals and career histories</li>
+                <li>Age analysis showing younger gymnasts excel vs older endurance athletes</li>
+              </ul>
+            </section>
+
+            <!-- KEY LEARNINGS -->
+            <section class="rounded-xl bg-white p-8 shadow-sm">
+              <h2 class="text-2xl font-semibold text-slate-900">Key Learnings</h2>
+
+              <ul class="mt-5 space-y-2 text-sm text-slate-600 font-light list-disc pl-5">
+                <li>Mastered Qlik load scripting for data cleaning and modeling</li>
+                <li>Applied set analysis for advanced filtering and dynamic measures</li>
+                <li>Optimized performance with efficient joins and pre-aggregation</li>
+                <li>Designed multi-sheet dashboards with KPI summaries and drilldowns</li>
+                <li>Improved BI storytelling for both casual users and analysts</li>
+                <li>Developed strong understanding of Olympic data trends</li>
+              </ul>
+            </section>
+
+          </div>
+        </div>
+      </section>
+
+      <footer class="mt-16 text-sm text-slate-500">
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <p>© <span id="year"></span> Birate Kabanza Arthur.</p>
+          <div class="flex gap-4">
+            <a class="hover:text-slate-900" href="#">Email</a>
+            <a class="hover:text-slate-900" href="#">LinkedIn</a>
+            <a class="hover:text-slate-900" href="#">GitHub</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

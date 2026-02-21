@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Birate Kabanza Arthur | Portfolio</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root {
+      --card: rgba(255, 255, 255, 0.75);
+    }
+
+    .page {
+      background:
+        radial-gradient(1000px 600px at 15% -10%, rgba(245, 158, 11, 0.15), transparent 60%),
+        radial-gradient(900px 500px at 90% 0%, rgba(59, 130, 246, 0.10), transparent 60%),
+        linear-gradient(180deg, #f3f5f9 0%, #eef2f7 60%, #f6f7fb 100%);
+    }
+
+    .card {
+      background: var(--card);
+      backdrop-filter: blur(12px);
+      box-shadow:
+        0 14px 30px rgba(2, 6, 23, 0.10),
+        0 1px 0 rgba(255, 255, 255, 0.8) inset;
+    }
+
+    .shine {
+      background: linear-gradient(90deg, #0f172a 0%, #334155 40%, #0f172a 70%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .soft-glow {
+      text-shadow: 0 1px 14px rgba(2, 6, 23, 0.12);
+    }
+
+    .hairline {
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(15, 23, 42, 0.15), transparent);
+    }
+  </style>
+</head>
+
+<body class="min-h-screen page font-[Inter] text-slate-800">
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 bg-white/70 backdrop-blur border-b border-slate-200/70">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-3">
+        <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-slate-900 text-white font-bold shadow-sm">
+          BA
+        </span>
+        <div>
+          <p class="font-semibold text-slate-900">Birate Kabanza Arthur</p>
+          <p class="text-xs text-slate-600">Data Analysis • Data Visualization</p>
+        </div>
+      </a>
+
+      <!-- Nav -->
+      <nav class="flex items-center gap-2">
+        <a href="index.html"
+          class="inline-flex items-center justify-center rounded-lg p-2 text-slate-700 hover:bg-slate-100">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+            viewBox="0 0 24 24" class="h-5 w-5">
+            <path
+              d="M11.47 3.84a1 1 0 0 1 1.06 0l7 4.67a1 1 0 0 1 .44.83V20a2 2 0 0 1-2 2h-4a1 1 0 0 1-1-1v-5H11v5a1 1 0 0 1-1 1H6a2 2 0 0 1-2-2V9.34a1 1 0 0 1 .44-.83l7-4.67Z"/>
+          </svg>
+        </a>
+
+        <a href="about.html"
+          class="rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100">
+          About
+        </a>
+
+        <a href="experience.html"
+          class="rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100">
+          Experience
+        </a>
+
+        <a href="projects.html"
+          class="rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100">
+          Projects
+        </a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="mx-auto max-w-6xl px-4 pb-16 pt-16">
+
+    <section class="card rounded-xl p-8 sm:p-12">
+
+      <div class="grid gap-12 md:grid-cols-2 md:items-center">
+
+        <!-- LEFT CONTENT -->
+        <div>
+
+          <p class="inline-flex items-center gap-2 rounded-lg bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600">
+            <span class="h-2 w-2 rounded-full bg-amber-500"></span>
+            Data-Driven Explorer with a Global Journey
+          </p>
+
+          <h1 class="mt-6 text-4xl sm:text-6xl font-['Playfair_Display'] font-semibold leading-tight text-slate-900 soft-glow">
+            Birate Kabanza Arthur
+            <span class="block shine mt-2">Turning data into decisions.</span>
+          </h1>
+
+          <p class="mt-6 text-lg leading-relaxed text-slate-600 font-light">
+            I turn raw data into meaningful visual insights. By combining analytical
+  thinking with powerful data visualization techniques, I help organizations
+  understand their data, identify patterns, and make confident decisions.
+          </p>
+
+          <div class="mt-8 flex gap-4">
+            <a href="#"
+              class="rounded-lg bg-slate-900 px-6 py-3 text-sm font-semibold text-white hover:bg-slate-800">
+              Download CV
+            </a>
+
+           
+          </div>
+
+          <div class="mt-10 hairline"></div>
+
+        </div>
+
+        <!-- RIGHT IMAGE -->
+        <div class="flex justify-center md:justify-end">
+          <div class="relative">
+
+            <img
+              src="assets/profile.jpg"
+              alt="Birate Kabanza Arthur"
+              class="h-[420px] w-[350px] object-cover rounded-xl shadow-2xl"
+            />
+
+            <!-- Soft glow background -->
+            <div class="absolute -z-10 inset-0 translate-x-6 translate-y-6 bg-amber-500/20 rounded-xl blur-2xl"></div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="mt-16 text-sm text-slate-500">
+      <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <p>© <span id="year"></span> Birate Kabanza Arthur.</p>
+        <div class="flex gap-4">
+          <a class="hover:text-slate-900" href="#">Email</a>
+          <a class="hover:text-slate-900" href="#">LinkedIn</a>
+          <a class="hover:text-slate-900" href="#">GitHub</a>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

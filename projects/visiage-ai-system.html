@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VisiAge – Fall & Cough Detection System | Birate Kabanza Arthur</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      :root { --card: rgba(255, 255, 255, 0.75); }
+
+      .page {
+        background:
+          radial-gradient(1000px 600px at 15% -10%, rgba(245, 158, 11, 0.10), transparent 60%),
+          radial-gradient(900px 500px at 90% 0%, rgba(59, 130, 246, 0.08), transparent 60%),
+          linear-gradient(180deg, #f3f5f9 0%, #eef2f7 60%, #f6f7fb 100%);
+      }
+
+      .card {
+        background: var(--card);
+        backdrop-filter: blur(12px);
+        box-shadow:
+          0 14px 30px rgba(2, 6, 23, 0.08),
+          0 1px 0 rgba(255, 255, 255, 0.8) inset;
+      }
+
+      .hairline {
+        height: 1px;
+        background: linear-gradient(to right, transparent, rgba(15, 23, 42, 0.15), transparent);
+      }
+    </style>
+  </head>
+
+  <body class="min-h-screen page font-[Inter] text-slate-800">
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 bg-white/70 backdrop-blur border-b border-slate-200/70">
+      <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+        <a href="../index.html" class="flex items-center gap-3">
+          <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-slate-900 text-white font-semibold">
+            BA
+          </span>
+          <div class="leading-tight">
+            <p class="font-semibold text-slate-900">Birate Kabanza Arthur</p>
+            <p class="text-xs text-slate-600">Data Analysis • Data Visualization</p>
+          </div>
+        </a>
+
+        <nav class="flex items-center gap-2">
+          <a href="../index.html" class="rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-100">Home</a>
+          <a href="../projects.html" class="rounded-lg px-3 py-2 text-sm bg-slate-900 text-white">Projects</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="mx-auto max-w-6xl px-4 pb-16 pt-16">
+      <section class="card rounded-2xl p-8 sm:p-12">
+
+        <!-- TOP -->
+        <div>
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <p class="text-sm text-slate-600">
+              <a href="../projects.html" class="hover:text-slate-900">Projects</a>
+              <span class="mx-2 text-slate-300">/</span>
+              <span class="text-slate-900 font-medium">VisiAge – Fall & Cough Detection System</span>
+            </p>
+
+            <span class="text-xs uppercase tracking-wide font-semibold text-slate-500">
+              Artificial Intelligence • Project 4.0
+            </span>
+          </div>
+
+          <h1 class="mt-5 text-4xl sm:text-5xl font-['Playfair_Display'] font-semibold text-slate-900">
+            VisiAge – Fall & Cough Detection System for Elderly People
+          </h1>
+
+          <div class="mt-6 flex flex-wrap gap-3">
+            <!-- Replace with your real GitHub URL -->
+            <a
+              href="https://github.com/arthurbirate/cough_detection_visi_age"
+              target="_blank"
+              class="rounded-lg bg-white px-4 py-2 text-sm font-medium text-slate-900 shadow-sm ring-1 ring-slate-200 hover:bg-slate-50"
+            >
+              GitHub Repo
+            </a>
+          </div>
+
+          <div class="mt-10 hairline"></div>
+        </div>
+
+        <!-- TWO-COLUMN LAYOUT -->
+        <div class="mt-10 grid gap-10 lg:grid-cols-[380px_1fr]">
+
+          <!-- LEFT (STICKY) -->
+          <aside class="lg:sticky lg:top-24 self-start space-y-8">
+
+            <!-- OBJECTIVE -->
+            <article class="rounded-xl bg-white p-8 shadow-sm">
+              <h2 class="text-xl font-semibold text-slate-900">Objective</h2>
+              <p class="mt-4 text-sm text-slate-600 font-light leading-relaxed">
+                The goal of this project was to design a comprehensive AI-powered health monitoring system for elderly individuals,
+                capable of detecting falls and coughing episodes in real time — two critical indicators of health risks. The system
+                aimed to improve personal safety and enable timely medical response.
+              </p>
+            </article>
+
+            <!-- CLIENT -->
+            <article class="rounded-xl bg-white p-8 shadow-sm">
+              <h2 class="text-xl font-semibold text-slate-900">Client & Project Details</h2>
+              <p class="mt-4 text-sm text-slate-600 font-light leading-relaxed">
+                This project was carried out for Mediaan, an IT consulting company based in Belgium. The work was structured into two phases:
+              </p>
+              <ul class="mt-5 space-y-2 text-sm text-slate-600 font-light list-disc pl-5">
+                <li>Research Phase – exploring potential solutions, collecting data, and defining the technical approach.</li>
+                <li>Realization Phase – implementing, testing, and integrating the cough and fall detection modules into the system.</li>
+              </ul>
+              <p class="mt-4 text-sm text-slate-600 font-light leading-relaxed">
+                The overall project duration was approximately 4 to 5 months.
+              </p>
+            </article>
+
+            <!-- TEAM -->
+            <article class="rounded-xl bg-white p-8 shadow-sm">
+              <h2 class="text-xl font-semibold text-slate-900">Team Composition</h2>
+              <p class="mt-4 text-sm text-slate-600 font-light leading-relaxed">
+                A cross-disciplinary team of 6 members worked together:
+              </p>
+              <ul class="mt-5 space-y-2 text-sm text-slate-600 font-light list-disc pl-5">
+                <li>2 members – App Development</li>
+                <li>2 members – CCS Networking</li>
+                <li>2 members – Artificial Intelligence (including my role)</li>
+              </ul>
+            </article>
+
+            <!-- TECH -->
+            <article class="rounded-xl bg-white p-8 shadow-sm">
+              <h2 class="text-xl font-semibold text-slate-900">Technologies Used</h2>
+              <ul class="mt-5 space-y-2 text-sm text-slate-600 font-light list-disc pl-5">
+                <li>Python</li>
+                <li>XGBoost</li>
+                <li>Librosa</li>
+                <li>MFCC</li>
+                <li>scikit-learn</li>
+                <li>CoreAudio</li>
+                <li>iPhone & Laptop Microphones</li>
+                <li>Real-time Audio Streaming</li>
+              </ul>
+            </article>
+
+            <!-- LINKS -->
+            <article class="rounded-xl bg-white p-8 shadow-sm">
+              <h2 class="text-xl font-semibold text-slate-900">Links</h2>
+              <div class="mt-4 flex flex-col gap-3 text-sm font-medium">
+                <a
+                  href="../projects.html"
+                  class="text-slate-900 underline underline-offset-4 hover:text-slate-700 transition"
+                >
+                  ← Back to Projects
+                </a>
+              </div>
+            </article>
+          </aside>
+
+          <!-- RIGHT -->
+          <div class="space-y-10">
+
+            <!-- IMAGES (BIG, STACKED) -->
+            <section class="rounded-xl bg-white p-8 shadow-sm">
+              <div class="flex flex-wrap items-center justify-between gap-4">
+                <h2 class="text-2xl font-semibold text-slate-900">Project Visuals</h2>
+                <p class="text-sm text-slate-500 font-light">Click an image to view full size.</p>
+              </div>
+
+              <div class="mt-6 space-y-6">
+                <a href="../assets/AI/caringminds.jpg" target="_blank" class="block">
+                  <div class="overflow-hidden rounded-xl border border-slate-200 bg-slate-50">
+                    <img
+                      src="../assets/AI/caringminds.jpg"
+                      alt="VisiAge Cough Detection Screenshot"
+                      class="w-full h-auto"
+                    />
+                  </div>
+                </a>
+
+                <a href="../assets/AI/cough.png" target="_blank" class="block">
+                  <div class="overflow-hidden rounded-xl border border-slate-200 bg-slate-50">
+                    <img
+                      src="../assets/AI/cough.png"
+                      alt="VisiAge Logo"
+                      class="w-full h-auto"
+                    />
+                  </div>
+                </a>
+              </div>
+            </section>
+
+            <!-- CONTRIBUTION -->
+            <section class="rounded-xl bg-white p-8 shadow-sm">
+              <h2 class="text-2xl font-semibold text-slate-900">My Contribution – Cough Detection Module</h2>
+
+              <p class="mt-4 text-sm text-slate-600 font-light leading-relaxed">
+                As part of the AI team, I was responsible for building the cough detection system. My tasks included:
+              </p>
+
+              <ul class="mt-5 space-y-2 text-sm text-slate-600 font-light list-disc pl-5">
+                <li>Collected real-world audio data (coughs and background noise) using iPhone and laptop microphones.</li>
+                <li>Processed audio signals and extracted features with MFCCs (Mel-Frequency Cepstral Coefficients).</li>
+                <li>Fine-tuned a pre-trained XGBoost model for cough classification.</li>
+                <li>Optimized the pipeline for real-time performance and integrated it with the monitoring system.</li>
+              </ul>
+            </section>
+
+            <!-- RESULTS -->
+            <section class="rounded-xl bg-white p-8 shadow-sm">
+              <h2 class="text-2xl font-semibold text-slate-900">Results</h2>
+              <p class="mt-4 text-sm text-slate-600 font-light leading-relaxed">
+                The module successfully detected cough episodes in real time with high precision, working seamlessly with consumer
+                devices such as iPhones and laptops. This highlighted the system’s potential for cost-effective healthcare monitoring
+                in elderly care environments.
+              </p>
+            </section>
+
+            <!-- LEARNINGS -->
+            <section class="rounded-xl bg-white p-8 shadow-sm">
+              <h2 class="text-2xl font-semibold text-slate-900">Key Learnings</h2>
+
+              <ul class="mt-5 space-y-2 text-sm text-slate-600 font-light list-disc pl-5">
+                <li>Hands-on experience with real-time audio signal processing using consumer devices.</li>
+                <li>Application of XGBoost in healthcare-related detection tasks.</li>
+                <li>Practical knowledge of MFCC feature extraction for audio classification.</li>
+                <li>Enhanced interdisciplinary collaboration across AI, networking, and app development teams.</li>
+                <li>Balancing accuracy and real-time performance for real-world healthcare deployment.</li>
+              </ul>
+            </section>
+
+          </div>
+        </div>
+      </section>
+
+      <footer class="mt-16 text-sm text-slate-500">
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <p>© <span id="year"></span> Birate Kabanza Arthur.</p>
+          <div class="flex gap-4">
+            <a class="hover:text-slate-900" href="#">Email</a>
+            <a class="hover:text-slate-900" href="#">LinkedIn</a>
+            <a class="hover:text-slate-900" href="#">GitHub</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

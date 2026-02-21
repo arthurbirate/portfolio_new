@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coffee Shop Sales & Customer Behavior Analytics | Birate Kabanza Arthur</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      :root { --card: rgba(255, 255, 255, 0.75); }
+
+      .page {
+        background:
+          radial-gradient(1000px 600px at 15% -10%, rgba(245, 158, 11, 0.10), transparent 60%),
+          radial-gradient(900px 500px at 90% 0%, rgba(59, 130, 246, 0.08), transparent 60%),
+          linear-gradient(180deg, #f3f5f9 0%, #eef2f7 60%, #f6f7fb 100%);
+      }
+
+      .card {
+        background: var(--card);
+        backdrop-filter: blur(12px);
+        box-shadow:
+          0 14px 30px rgba(2, 6, 23, 0.08),
+          0 1px 0 rgba(255, 255, 255, 0.8) inset;
+      }
+
+      .hairline {
+        height: 1px;
+        background: linear-gradient(to right, transparent, rgba(15, 23, 42, 0.15), transparent);
+      }
+    </style>
+  </head>
+
+  <body class="min-h-screen page font-[Inter] text-slate-800">
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 bg-white/70 backdrop-blur border-b border-slate-200/70">
+      <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+        <a href="../index.html" class="flex items-center gap-3">
+          <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-slate-900 text-white font-semibold">
+            BA
+          </span>
+          <div class="leading-tight">
+            <p class="font-semibold text-slate-900">Birate Kabanza Arthur</p>
+            <p class="text-xs text-slate-600">Data Analysis • Data Visualization</p>
+          </div>
+        </a>
+
+        <nav class="flex items-center gap-2">
+          <a href="../index.html" class="rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-100">Home</a>
+          <a href="../projects.html" class="rounded-lg px-3 py-2 text-sm bg-slate-900 text-white">Projects</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="mx-auto max-w-6xl px-4 pb-16 pt-16">
+      <section class="card rounded-2xl p-8 sm:p-12">
+
+        <!-- Top heading (full width) -->
+        <div>
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <p class="text-sm text-slate-600">
+              <a href="../projects.html" class="hover:text-slate-900">Projects</a>
+              <span class="mx-2 text-slate-300">/</span>
+              <span class="text-slate-900 font-medium">Coffee Shop Sales & Customer Behavior Analytics</span>
+            </p>
+
+            <span class="text-xs uppercase tracking-wide font-semibold text-slate-500">
+              Business Intelligence • Tableau
+            </span>
+          </div>
+
+          <h1 class="mt-5 text-4xl sm:text-5xl font-['Playfair_Display'] font-semibold text-slate-900">
+            Coffee Shop Sales & Customer Behavior Analytics
+          </h1>
+
+          <p class="mt-4 max-w-3xl text-slate-600 font-light leading-relaxed">
+            This project analyzes transactional coffee shop sales data to understand revenue performance, product contribution,
+            customer purchasing behavior, and time-based demand patterns. The solution converts transaction-level data into
+            actionable operational and financial insights.
+          </p>
+
+          <div class="mt-10 hairline"></div>
+        </div>
+
+        <!-- TWO-COLUMN LAYOUT -->
+        <div class="mt-10 grid gap-10 lg:grid-cols-[380px_1fr]">
+
+          <!-- LEFT COLUMN (STICKY SIDEBAR) -->
+          <aside class="lg:sticky lg:top-24 self-start space-y-8">
+
+            <!-- OBJECTIVE -->
+            <article class="rounded-xl bg-white p-8 shadow-sm">
+              <h2 class="text-xl font-semibold text-slate-900">Project Objective</h2>
+
+              <p class="mt-4 text-sm text-slate-600 font-light leading-relaxed">
+                The objective of this project was to:
+              </p>
+
+              <ul class="mt-5 space-y-2 text-sm text-slate-600 font-light list-disc pl-5">
+                <li>Monitor revenue performance and transaction metrics</li>
+                <li>Identify top-performing and underperforming products</li>
+                <li>Detect seasonality and monthly revenue fluctuations</li>
+                <li>Analyze customer purchasing behavior across time</li>
+                <li>Support operational and staffing optimization</li>
+              </ul>
+            </article>
+
+            <!-- TOOLS (kept consistent with your other project pages) -->
+            <article class="rounded-xl bg-white p-8 shadow-sm">
+              <h2 class="text-xl font-semibold text-slate-900">Tools & Technologies</h2>
+
+              <ul class="mt-5 space-y-2 text-sm text-slate-600 font-light">
+                <li><span class="font-medium text-slate-900">Tableau Desktop</span> — dashboards, KPIs, filtering, comparisons</li>
+                <li><span class="font-medium text-slate-900">Calculated fields</span> — custom metrics & measures</li>
+                <li><span class="font-medium text-slate-900">Time analysis</span> — hourly, weekday, time-of-day segmentation</li>
+                <li><span class="font-medium text-slate-900">Heatmaps</span> — peak demand window identification</li>
+              </ul>
+            </article>
+
+            <!-- LINKS -->
+            <article class="rounded-xl bg-white p-8 shadow-sm">
+              <h2 class="text-xl font-semibold text-slate-900">Links</h2>
+
+              <div class="mt-4 flex flex-col gap-3 text-sm font-medium">
+                <a
+                  href="../projects.html"
+                  class="text-slate-900 underline underline-offset-4 hover:text-slate-700 transition"
+                >
+                  ← Back to Projects
+                </a>
+
+                <!-- Replace when you have a real link -->
+                <a
+                  href="https://public.tableau.com/app/profile/birate.arthur/vizzes"
+                  class="text-slate-500 hover:text-slate-900 transition"
+                >
+                  Tableau Public
+                </a>
+              </div>
+            </article>
+
+          </aside>
+
+          <!-- RIGHT COLUMN (MAIN CONTENT) -->
+          <div class="space-y-10">
+
+            <!-- DASHBOARDS -->
+            <section class="rounded-xl bg-white p-8 shadow-sm">
+              <h2 class="text-2xl font-semibold text-slate-900">Dashboards</h2>
+              <p class="mt-2 text-sm text-slate-600 font-light">
+                Two dashboards designed for financial monitoring and time-based customer behavior analysis.
+              </p>
+
+              <!-- Dashboard 1 -->
+              <section class="mt-8 rounded-xl bg-slate-50 p-8 border border-slate-200">
+                <div class="flex flex-wrap items-center justify-between gap-4">
+                  <h3 class="text-xl font-semibold text-slate-900">Sales Performance & Revenue Overview Dashboard</h3>
+                  <span class="text-xs uppercase tracking-wide font-semibold text-slate-500">Financial Summary</span>
+                </div>
+
+                <!-- Image -->
+                <div class="mt-6 overflow-hidden rounded-xl border border-slate-200 bg-white">
+                  <img
+                    src="../assets/coffee_dashboard/sales_perfomance.png"
+                    alt="Sales Performance & Revenue Overview Dashboard - Tableau"
+                    class="w-full h-auto"
+                  />
+                </div>
+
+                <p class="mt-6 text-sm text-slate-600 font-light leading-relaxed">
+                  This dashboard provides a structured financial summary of business performance. It tracks total revenue,
+                  total transactions, and average transaction value to measure profitability and operational efficiency.
+                </p>
+
+                <p class="mt-3 text-sm text-slate-600 font-light leading-relaxed">
+                  It analyzes product-level revenue contribution to identify key revenue drivers and monthly trends to detect
+                  seasonal fluctuations. Payment method distribution further highlights customer purchasing preferences.
+                </p>
+
+                <p class="mt-3 text-sm text-slate-600 font-light leading-relaxed">
+                  Its purpose is to support financial monitoring, pricing strategy evaluation, and product mix optimization.
+                </p>
+              </section>
+
+              <!-- Dashboard 2 -->
+              <section class="mt-8 rounded-xl bg-slate-50 p-8 border border-slate-200">
+                <div class="flex flex-wrap items-center justify-between gap-4">
+                  <h3 class="text-xl font-semibold text-slate-900">Customer Behavior & Time Analysis Dashboard</h3>
+                  <span class="text-xs uppercase tracking-wide font-semibold text-slate-500">Operational Intelligence</span>
+                </div>
+
+                <!-- Image -->
+                <div class="mt-6 overflow-hidden rounded-xl border border-slate-200 bg-white">
+                  <img
+                    src="../assets/coffee_dashboard/Customer_B.png"
+                    alt="Customer Behavior & Time Analysis Dashboard - Tableau"
+                    class="w-full h-auto"
+                  />
+                </div>
+
+                <p class="mt-6 text-sm text-slate-600 font-light leading-relaxed">
+                  This dashboard focuses on time-based purchasing patterns by analyzing revenue and transactions across time
+                  of day, weekday, and hourly intervals.
+                </p>
+
+                <p class="mt-3 text-sm text-slate-600 font-light leading-relaxed">
+                  Through heatmaps and time segmentation, it identifies peak demand windows and product preferences throughout
+                  the day. These insights support workforce planning, inventory management, and promotional timing.
+                </p>
+
+                <p class="mt-3 text-sm text-slate-600 font-light leading-relaxed">
+                  Its purpose is to translate transactional timestamps into operational intelligence that improves efficiency and
+                  customer experience.
+                </p>
+              </section>
+            </section>
+
+            <!-- SKILLS DEMONSTRATION (NO ICONS) -->
+            <section class="rounded-xl bg-white p-8 shadow-sm">
+              <h2 class="text-2xl font-semibold text-slate-900">Overall Skill Demonstration</h2>
+
+              <p class="mt-4 text-sm text-slate-600 font-light leading-relaxed">
+                Across both projects, I demonstrated the ability to:
+              </p>
+
+              <ul class="mt-5 space-y-2 text-sm text-slate-600 font-light list-disc pl-5">
+                <li>Transform raw datasets into structured analytical models</li>
+                <li>Build interactive, executive-ready dashboards</li>
+                <li>Apply time-series and comparative regional analysis</li>
+                <li>Perform market concentration and performance analysis</li>
+                <li>Deliver business-focused insights using Tableau</li>
+              </ul>
+            </section>
+
+          </div>
+        </div>
+      </section>
+
+      <footer class="mt-16 text-sm text-slate-500">
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <p>© <span id="year"></span> Birate Kabanza Arthur.</p>
+          <div class="flex gap-4">
+            <a class="hover:text-slate-900" href="#">Email</a>
+            <a class="hover:text-slate-900" href="#">LinkedIn</a>
+            <a class="hover:text-slate-900" href="#">GitHub</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

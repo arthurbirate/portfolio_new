@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Birate Kabanza Arthur</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root { --card: rgba(255, 255, 255, 0.75); }
+
+    .page {
+      background:
+        radial-gradient(1000px 600px at 15% -10%, rgba(245, 158, 11, 0.10), transparent 60%),
+        radial-gradient(900px 500px at 90% 0%, rgba(59, 130, 246, 0.08), transparent 60%),
+        linear-gradient(180deg, #f3f5f9 0%, #eef2f7 60%, #f6f7fb 100%);
+    }
+
+    .card {
+      background: var(--card);
+      backdrop-filter: blur(12px);
+      box-shadow:
+        0 14px 30px rgba(2, 6, 23, 0.08),
+        0 1px 0 rgba(255, 255, 255, 0.8) inset;
+    }
+
+    .hairline {
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(15, 23, 42, 0.15), transparent);
+    }
+  </style>
+</head>
+
+<body class="min-h-screen page font-[Inter] text-slate-800">
+
+<header class="sticky top-0 z-50 bg-white/70 backdrop-blur border-b border-slate-200/70">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+
+    <a href="index.html" class="flex items-center gap-3">
+      <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-slate-900 text-white font-semibold">
+        BA
+      </span>
+      <div>
+        <p class="font-semibold text-slate-900">Birate Kabanza Arthur</p>
+        <p class="text-xs text-slate-600">Data Analysis • Data Visualization</p>
+      </div>
+    </a>
+
+    <nav class="flex items-center gap-2">
+      <a href="index.html" class="rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-100">Home</a>
+      <a href="about.html" class="rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-100">About</a>
+      <a href="experience.html" class="rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-100">Experience</a>
+      <a href="projects.html" class="rounded-lg px-3 py-2 text-sm bg-slate-900 text-white">Projects</a>
+    </nav>
+
+  </div>
+</header>
+
+<main class="mx-auto max-w-6xl px-4 pb-16 pt-16">
+  <section class="card rounded-2xl p-8 sm:p-12">
+
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <div>
+        <h1 class="text-4xl sm:text-5xl font-['Playfair_Display'] font-semibold text-slate-900">
+            Projects & Accomplishments
+        </h1>
+        <p class="mt-3 text-slate-600 max-w-2xl font-light">
+          A curated portfolio of Business Intelligence, Data Visualization, and Artificial Intelligence work.
+        </p>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <label class="text-sm font-medium text-slate-600" for="projectFilter">Filter:</label>
+        <select
+          id="projectFilter"
+          class="rounded-lg bg-white px-3 py-2 text-sm text-slate-800 shadow-sm ring-1 ring-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-300"
+        >
+          <option value="all">All</option>
+          <option value="bi">Business Intelligence</option>
+          <option value="ml">AI / ML</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="mt-10 hairline"></div>
+
+    <div class="mt-10 grid gap-8 md:grid-cols-2">
+
+        <!-- Video Game Sales -->
+        <article class="project-card rounded-xl bg-white p-8 shadow-sm hover:shadow-md transition" data-tags="bi">
+          <span class="text-xs uppercase tracking-wide font-semibold text-slate-500">
+            Business Intelligence
+          </span>
+      
+          <h3 class="mt-3 text-xl font-semibold text-slate-900">
+            Video Game Sales Analytics Dashboard
+          </h3>
+      
+          <p class="mt-4 text-sm text-slate-600 font-light leading-relaxed">
+            Comprehensive Tableau dashboard analyzing global video game sales
+            performance across publishers, regions, genres, and time.
+          </p>
+      
+          <div class="mt-6 flex gap-6 text-sm font-medium">
+            <a href="projects/video-game-sales-dashboard.html"
+               class="text-slate-900 underline underline-offset-4 hover:text-slate-700 transition">
+              Explore Project →
+            </a>
+            <a href="https://public.tableau.com/app/profile/birate.arthur/vizzes"
+               class="text-slate-500 hover:text-slate-900 transition">
+              Tableau Public
+            </a>
+          </div>
+        </article>
+      
+      
+        <!-- Coffee Shop -->
+        <article class="project-card rounded-xl bg-white p-8 shadow-sm hover:shadow-md transition" data-tags="bi">
+          <span class="text-xs uppercase tracking-wide font-semibold text-slate-500">
+            Business Intelligence
+          </span>
+      
+          <h3 class="mt-3 text-xl font-semibold text-slate-900">
+            Coffee Shop Sales & Customer Behavior Dashboard
+          </h3>
+      
+          <p class="mt-4 text-sm text-slate-600 font-light leading-relaxed">
+            Interactive Tableau BI solution analyzing sales performance,
+            customer behavior, and revenue trends to support operational optimization.
+          </p>
+      
+          <div class="mt-6 flex gap-6 text-sm font-medium">
+            <a href="projects/coffee-shop-dashboard.html"
+               class="text-slate-900 underline underline-offset-4 hover:text-slate-700 transition">
+              Explore Project →
+            </a>
+            <a href="https://public.tableau.com/app/profile/birate.arthur/vizzes"
+               class="text-slate-500 hover:text-slate-900 transition">
+              Tableau Public
+            </a>
+          </div>
+        </article>
+      
+      
+        <!-- Olympics Dashboard -->
+        <article class="project-card rounded-xl bg-white p-8 shadow-sm hover:shadow-md transition" data-tags="bi">
+          <span class="text-xs uppercase tracking-wide font-semibold text-slate-500">
+            Business Intelligence
+          </span>
+      
+          <h3 class="mt-3 text-xl font-semibold text-slate-900">
+            Olympics Performance Dashboard (Qlik Sense)
+          </h3>
+      
+          <p class="mt-4 text-sm text-slate-600 font-light leading-relaxed">
+            Qlik Sense dashboard exploring Olympic performance trends
+            across countries, sports, and historical timelines.
+          </p>
+      
+          <div class="mt-6 flex gap-6 text-sm font-medium">
+            <a href="projects/olympics-dashboard.html"
+               class="text-slate-900 underline underline-offset-4 hover:text-slate-700 transition">
+              Explore Project →
+            </a>
+          </div>
+        </article>
+      
+      
+        <!-- Superstore -->
+        <article class="project-card rounded-xl bg-white p-8 shadow-sm hover:shadow-md transition" data-tags="bi">
+          <span class="text-xs uppercase tracking-wide font-semibold text-slate-500">
+            Data Visualization
+          </span>
+      
+          <h3 class="mt-3 text-xl font-semibold text-slate-900">
+            Superstore Sales & Shipping Analytics (Power BI)
+          </h3>
+      
+          <p class="mt-4 text-sm text-slate-600 font-light leading-relaxed">
+            Power BI dashboard analyzing revenue, profit margins,
+            and shipping performance to generate actionable insights.
+          </p>
+      
+          <div class="mt-6 flex gap-6 text-sm font-medium">
+            <a href="projects/superstore-powerbi.html"
+               class="text-slate-900 underline underline-offset-4 hover:text-slate-700 transition">
+              Explore Project →
+            </a>
+          </div>
+        </article>
+      
+      
+        <!-- YOLO -->
+        <article class="project-card rounded-xl bg-white p-8 shadow-sm hover:shadow-md transition" data-tags="ml">
+          <span class="text-xs uppercase tracking-wide font-semibold text-slate-500">
+            Artificial Intelligence
+          </span>
+      
+          <h3 class="mt-3 text-xl font-semibold text-slate-900">
+            Object Detection – “Where’s Waldo?”
+          </h3>
+      
+          <p class="mt-4 text-sm text-slate-600 font-light leading-relaxed">
+            Built a computer vision pipeline using YOLOv5 and YOLOv8
+            for object detection in complex scenes.
+          </p>
+      
+          <div class="mt-6 flex gap-6 text-sm font-medium">
+            <a href="projects/yolo-object-detection.html"
+               class="text-slate-900 underline underline-offset-4 hover:text-slate-700 transition">
+              Explore Project →
+            </a>
+            <a href="https://github.com/arthurbirate/detect_waldo"
+               class="text-slate-500 hover:text-slate-900 transition">
+              GitHub
+            </a>
+          </div>
+        </article>
+      
+      
+        <!-- VisiAge -->
+        <article class="project-card rounded-xl bg-white p-8 shadow-sm hover:shadow-md transition" data-tags="ml">
+          <span class="text-xs uppercase tracking-wide font-semibold text-slate-500">
+            Artificial Intelligence
+          </span>
+      
+          <h3 class="mt-3 text-xl font-semibold text-slate-900">
+            VisiAge – Fall & Cough Detection System
+          </h3>
+      
+          <p class="mt-4 text-sm text-slate-600 font-light leading-relaxed">
+            AI-based healthcare monitoring concept focused on fall and
+            cough detection reliability for elderly safety applications.
+          </p>
+      
+          <div class="mt-6 flex gap-6 text-sm font-medium">
+            <a href="projects/visiage-ai-system.html"
+               class="text-slate-900 underline underline-offset-4 hover:text-slate-700 transition">
+              Explore Project →
+            </a>
+            <a href="https://github.com/arthurbirate/cough_detection_visi_age"
+               class="text-slate-500 hover:text-slate-900 transition">
+              Github
+            </a>
+          </div>
+        </article>
+      
+      </div>
+
+  </section>
+
+  <footer class="mt-16 text-sm text-slate-500">
+    <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+      <p>© <span id="year"></span> Birate Kabanza Arthur.</p>
+      <div class="flex gap-4">
+        <p class="text-sm text-slate-500">
+            arthurbirate98@gmail.com
+          </p>
+        <a 
+        href="mailto:arthurbirate98@gmail.com?subject=Regarding%20Your%20Portfolio"
+        class="hover:text-slate-900 font-medium transition"
+      >
+        Email
+      </a>
+        <a class="hover:text-slate-900" href="https://www.linkedin.com/in/arthurbirate/">LinkedIn</a>
+        <a class="hover:text-slate-900" href="https://github.com/arthurbirate">GitHub</a>
+      </div>
+    </div>
+  </footer>
+</main>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  const filter = document.getElementById("projectFilter");
+  const cards = Array.from(document.querySelectorAll(".project-card"));
+
+  function applyFilter(val) {
+    cards.forEach((c) => {
+      const tags = (c.dataset.tags || "").split(" ").filter(Boolean);
+      c.classList.toggle("hidden", !(val === "all" || tags.includes(val)));
+    });
+  }
+
+  applyFilter("all");
+  filter.addEventListener("change", (e) => applyFilter(e.target.value));
+</script>
+
+</body>
+</html>
