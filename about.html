@@ -5,11 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | Birate Kabanza Arthur</title>
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
     rel="stylesheet"
   />
 
@@ -17,256 +16,444 @@
 
   <style>
     :root {
-      --card: rgba(255, 255, 255, 0.75);
+      --card: rgba(255, 255, 255, 0.72);
+      --border: rgba(255, 255, 255, 0.5);
+      --text: #0f172a;
     }
 
-    .page {
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      color: var(--text);
       background:
-        radial-gradient(1000px 600px at 15% -10%, rgba(245, 158, 11, 0.15), transparent 60%),
-        radial-gradient(900px 500px at 90% 0%, rgba(59, 130, 246, 0.10), transparent 60%),
-        linear-gradient(180deg, #f3f5f9 0%, #eef2f7 60%, #f6f7fb 100%);
+        radial-gradient(900px 500px at 10% -10%, rgba(245, 158, 11, 0.18), transparent 60%),
+        radial-gradient(800px 500px at 95% 0%, rgba(59, 130, 246, 0.12), transparent 60%),
+        radial-gradient(700px 500px at 50% 100%, rgba(16, 185, 129, 0.10), transparent 60%),
+        linear-gradient(180deg, #f8fafc 0%, #f3f6fb 45%, #eef4ff 100%);
+      min-height: 100vh;
     }
 
-    .card {
+    .serif {
+      font-family: "Playfair Display", serif;
+    }
+
+    .glass {
       background: var(--card);
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
       box-shadow:
-        0 14px 30px rgba(2, 6, 23, 0.10),
-        0 1px 0 rgba(255, 255, 255, 0.8) inset;
+        0 18px 40px rgba(15, 23, 42, 0.08),
+        0 1px 0 rgba(255, 255, 255, 0.75) inset;
     }
 
-    .hairline {
+    .soft-card {
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      box-shadow:
+        0 14px 30px rgba(15, 23, 42, 0.06),
+        0 1px 0 rgba(255, 255, 255, 0.9) inset;
+    }
+
+    .section-line {
       height: 1px;
-      background: linear-gradient(to right, transparent, rgba(15, 23, 42, 0.15), transparent);
+      background: linear-gradient(to right, transparent, rgba(100, 116, 139, 0.3), transparent);
     }
 
-    .shine {
-      background: linear-gradient(90deg, #0f172a 0%, #334155 40%, #0f172a 70%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      background: rgba(255, 255, 255, 0.78);
+      color: #334155;
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
     }
 
-    .soft-glow {
-      text-shadow: 0 1px 14px rgba(2, 6, 23, 0.12);
+    .dot {
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 999px;
+      display: inline-block;
     }
 
-    .prose p {
-      margin-top: 1rem;
-      line-height: 1.9;
-      color: #475569;
-      font-weight: 300;
+    .nav-link {
+      position: relative;
+      transition: all 0.25s ease;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      bottom: 6px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(to right, #f59e0b, #3b82f6);
+      transform: scaleX(0);
+      transition: transform 0.25s ease;
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      transform: scaleX(1);
+    }
+
+    .hero-grid {
+      background-image:
+        linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+      background-size: 28px 28px;
+      background-position: center;
+    }
+
+    .content-card,
+    .info-card,
+    .passion-card,
+    .skill-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .content-card:hover,
+    .info-card:hover,
+    .passion-card:hover,
+    .skill-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 22px 40px rgba(15, 23, 42, 0.08);
+    }
+
+    .profile-image {
+      box-shadow:
+        0 24px 60px rgba(15, 23, 42, 0.16),
+        0 1px 0 rgba(255,255,255,0.8) inset;
+    }
+
+    .primary-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.9rem;
+      padding: 0.8rem 1.1rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: all 0.25s ease;
+    }
+
+    .primary-btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .fade-up {
+      animation: fadeUp 0.7s ease both;
+    }
+
+    .fade-up-delay {
+      animation: fadeUp 0.95s ease both;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-title {
+        font-size: 2.35rem;
+        line-height: 1.05;
+      }
     }
   </style>
 </head>
 
-<body class="min-h-screen page font-[Inter] text-slate-800">
-
+<body class="text-slate-800">
   <!-- HEADER -->
-  <header class="sticky top-0 z-50 bg-white/70 backdrop-blur border-b border-slate-200/70">
-    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-
-      <a href="index.html" class="flex items-center gap-3">
-        <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-slate-900 text-white font-bold shadow-sm">
+  <header class="sticky top-0 z-50 border-b border-white/40 bg-white/55 backdrop-blur-xl">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+      <a href="index.html" class="group flex items-center gap-3">
+        <span class="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-slate-900 via-amber-900 to-slate-700 text-sm font-bold text-white shadow-lg shadow-slate-900/20 transition group-hover:scale-105">
           BA
         </span>
-        <div>
-          <p class="font-semibold text-slate-900">Birate Kabanza Arthur</p>
-          <p class="text-xs text-slate-600">Data Analysis • Data Visualization</p>
+        <div class="leading-tight">
+          <p class="text-sm font-semibold text-slate-900 sm:text-base">Birate Kabanza Arthur</p>
+          <p class="text-xs text-slate-500 sm:text-sm">Data Analysis • Data Visualization</p>
         </div>
       </a>
 
-      <nav class="flex items-center gap-2">
-        <a href="index.html"
-          class="inline-flex items-center justify-center rounded-lg p-2 text-slate-700 hover:bg-slate-100">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-            viewBox="0 0 24 24" class="h-5 w-5">
-            <path
-              d="M11.47 3.84a1 1 0 0 1 1.06 0l7 4.67a1 1 0 0 1 .44.83V20a2 2 0 0 1-2 2h-4a1 1 0 0 1-1-1v-5H11v5a1 1 0 0 1-1 1H6a2 2 0 0 1-2-2V9.34a1 1 0 0 1 .44-.83l7-4.67Z"/>
-          </svg>
-        </a>
-
-        <a href="about.html"
-          class="rounded-lg px-3 py-2 text-sm font-medium bg-amber-500/20 text-amber-900">
-          About
-        </a>
-
-        <a href="experience.html"
-          class="rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100">
-          Experience
-        </a>
-
-        <a href="projects.html"
-          class="rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100">
-          Projects
-        </a>
+      <nav class="flex items-center gap-1">
+        <a href="index.html" class="nav-link rounded-xl px-4 py-2 text-sm text-slate-700 hover:bg-white/70">Home</a>
+        <a href="about.html" class="nav-link active rounded-xl bg-slate-900 px-4 py-2 text-sm text-white shadow-lg shadow-slate-900/15">About</a>
+        <a href="experience.html" class="nav-link rounded-xl px-4 py-2 text-sm text-slate-700 hover:bg-white/70">Experience</a>
+        <a href="projects.html" class="nav-link rounded-xl px-4 py-2 text-sm text-slate-700 hover:bg-white/70">Projects</a>
       </nav>
-
     </div>
   </header>
 
   <!-- MAIN -->
-  <main class="mx-auto max-w-6xl px-4 pb-16 pt-16">
-
-    <section class="card rounded-xl p-8 sm:p-12">
-
-      <p class="inline-flex items-center gap-2 rounded-lg bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600">
-        <span class="h-2 w-2 rounded-full bg-amber-500"></span>
-        About
-      </p>
-
-      <h1 class="mt-6 text-4xl sm:text-6xl font-['Playfair_Display'] font-semibold text-slate-900 soft-glow">
-        About Me
-        <span class="block shine mt-2">Birate Kabanza Arthur</span>
-      </h1>
-
-      <div class="mt-8 hairline"></div>
-
-      <div class="mt-10 grid gap-10 md:grid-cols-3">
-
-        <!-- LEFT CONTENT -->
-        <article class="md:col-span-2 rounded-xl bg-white/70 p-8 shadow-sm">
-          <h2 class="text-2xl font-semibold text-slate-900">Biography</h2>
-
-          <div class="prose mt-4">
-            <p>
-              I’m Birate Kabanza Arthur, a data-driven enthusiast with a curious mind and an international academic journey.
-              I began pursuing my studies in Petroleum Engineering in China, building a strong analytical and technical foundation.
-            </p>
-
-            <p>
-              I later moved to Belgium to pursue Applied Computer Science (AI track) at Thomas More University of Applied Sciences,
-              where I deepened my expertise in data analysis, visualization, and intelligent systems.
-            </p>
-
-            <p>
-              Today, my focus is on transforming data into meaningful visual insights. I combine analytical thinking with
-              visualization techniques to reveal trends, patterns, and opportunities that support informed decision-making.
-            </p>
-          </div>
-
-          <div class="mt-8 hairline"></div>
-
-          <h3 class="mt-8 text-2xl font-semibold text-slate-900">Passions</h3>
-
-          <div class="mt-6 grid gap-6 sm:grid-cols-2">
-
-            <div class="rounded-xl bg-white/70 p-6 shadow-sm">
-              <p class="font-semibold text-slate-900">Reading</p>
-              <p class="mt-2 text-sm text-slate-600 font-light">
-                Non-fiction books that challenge my thinking and promote discipline,
-                resilience, and authenticity.
-              </p>
-            </div>
-
-            <div class="rounded-xl bg-white/70 p-6 shadow-sm">
-              <p class="font-semibold text-slate-900">Travel & Culture</p>
-              <p class="mt-2 text-sm text-slate-600 font-light">
-                Exploring diverse cultures expands my worldview and shapes how I
-                approach data, collaboration, and problem-solving.
-              </p>
-            </div>
-
-          </div>
-
-        </article>
-
-        <aside class="rounded-xl bg-white/75 p-10 shadow-sm text-center">
-
-            <!-- Portrait -->
-            <div class="flex justify-center">
-              <div class="relative">
-                <img
-                  src="assets/profile2.png"
-                  alt="Birate Kabanza Arthur"
-                  class="w-[380px] max-w-full h-auto object-cover rounded-xl shadow-xl"
-                />
-                <div class="absolute -z-10 inset-0 translate-x-6 translate-y-6 bg-slate-900/5 rounded-xl blur-2xl"></div>
-              </div>
-            </div>
-          
-            <!-- Name -->
-            <div class="mt-8">
-              <p class="text-2xl font-semibold text-slate-900">
-                Birate Kabanza Arthur
-              </p>
-              <p class="text-sm text-slate-600 font-light tracking-wide">
-                Data Analysis • Data Visualization • AI
-              </p>
-            </div>
-          
-            <!-- Contact -->
-            <div class="mt-6 space-y-2 text-sm text-slate-600 font-light">
-              <p><span class="font-medium text-slate-900">Location:</span> Belgium</p>
-              <p><span class="font-medium text-slate-900">Languages:</span> French (Native), English (Fluent)</p>
-              <p>
-                <span class="font-medium text-slate-900">Email:</span>
-                <a href="mailto:arthurbirate98@gmail.com" class="hover:text-slate-900">
-                  arthurbirate98@gmail.com
-                </a>
-              </p>
-            </div>
-          
-            <!-- Divider -->
-            <div class="mt-8 border-t border-slate-200 pt-6"></div>
-          
-            <!-- Skills -->
-            <div class="text-left">
-              <h3 class="text-lg font-semibold text-slate-900">Core Skills</h3>
-          
-              <div class="mt-5 space-y-5 text-sm text-slate-600 font-light">
-          
-                <!-- Data Visualization -->
-                <div>
-                  <p class="font-medium text-slate-900">Data Visualization</p>
-                  <p>Tableau • Power BI • Qlik Sense • Excel • Grafana</p>
-                </div>
-          
-                <!-- Programming -->
-                <div>
-                  <p class="font-medium text-slate-900">Programming & Development</p>
-                  <p>Python • SQL • Django</p>
-                </div>
-          
-                <!-- Data Engineering -->
-                <div>
-                  <p class="font-medium text-slate-900">Data Engineering & Infrastructure</p>
-                  <p>ETL Pipelines • Docker • Kubernetes • Elasticsearch • Logstash</p>
-                </div>
-          
-                <!-- Artificial Intelligence -->
-                <div>
-                  <p class="font-medium text-slate-900">Artificial Intelligence</p>
-                  <p>Machine Learning • YOLO • XGBoost • Feature Engineering</p>
-                </div>
-          
-              </div>
-            </div>
-          
-          </aside>
-          
-
+  <main class="mx-auto max-w-7xl px-4 pb-16 pt-10 sm:px-6 lg:px-8 lg:pt-14">
+    <!-- HERO -->
+    <section class="glass hero-grid relative overflow-hidden rounded-[2rem] px-6 py-10 sm:px-10 sm:py-14 lg:px-14">
+      <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute -left-12 top-8 h-40 w-40 rounded-full bg-amber-400/20 blur-3xl"></div>
+        <div class="absolute right-0 top-0 h-44 w-44 rounded-full bg-sky-400/20 blur-3xl"></div>
+        <div class="absolute bottom-0 left-1/3 h-36 w-36 rounded-full bg-emerald-400/20 blur-3xl"></div>
       </div>
 
+      <div class="relative z-10 grid gap-8 lg:grid-cols-[1.3fr_0.7fr] lg:items-end">
+        <div class="fade-up">
+          <div class="flex flex-wrap gap-3">
+            <span class="chip">
+              <span class="dot bg-amber-500"></span>
+              About Me
+            </span>
+            <span class="chip">
+              <span class="dot bg-sky-500"></span>
+              Data & AI
+            </span>
+          </div>
+
+          <h1 class="hero-title mt-6 max-w-4xl text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl serif">
+            About
+            <span class="bg-gradient-to-r from-slate-900 via-amber-700 to-sky-600 bg-clip-text text-transparent">
+              Birate Kabanza Arthur
+            </span>
+          </h1>
+
+          <p class="mt-5 max-w-3xl text-base leading-7 text-slate-600 sm:text-lg">
+            I am passionate about turning data into clear, meaningful insights. My journey combines engineering, applied computer science, and artificial intelligence, with a strong focus on data analysis, visualization, and practical problem solving.
+          </p>
+
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a
+              href="mailto:arthurbirate98@gmail.com?subject=Regarding%20Your%20Portfolio"
+              class="primary-btn bg-slate-900 text-white shadow-lg shadow-slate-900/15 hover:bg-slate-800"
+            >
+              Contact Me
+            </a>
+          </div>
+        </div>
+
+        <div class="fade-up-delay grid grid-cols-2 gap-4">
+          <div class="soft-card rounded-2xl p-5">
+            <p class="text-2xl font-bold text-slate-900">Belgium</p>
+            <p class="mt-1 text-sm text-slate-600">Current location</p>
+          </div>
+          <div class="soft-card rounded-2xl p-5">
+            <p class="text-2xl font-bold text-slate-900">AI</p>
+            <p class="mt-1 text-sm text-slate-600">Applied CS track</p>
+          </div>
+          <div class="soft-card rounded-2xl p-5">
+            <p class="text-2xl font-bold text-slate-900">French</p>
+            <p class="mt-1 text-sm text-slate-600">Native language</p>
+          </div>
+          <div class="soft-card rounded-2xl p-5">
+            <p class="text-2xl font-bold text-slate-900">English</p>
+            <p class="mt-1 text-sm text-slate-600">Fluent</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-line my-8"></div>
+
+    <!-- CONTENT -->
+    <section class="grid gap-8 md:grid-cols-[1.2fr_0.8fr]">
+      <!-- LEFT -->
+      <div class="space-y-8">
+        <section class="content-card glass rounded-[1.75rem] p-6 sm:p-8 lg:p-10">
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <h2 class="text-2xl font-semibold text-slate-900">Biography</h2>
+              <p class="mt-2 text-sm text-slate-600">
+                A short introduction to my academic background and professional focus.
+              </p>
+            </div>
+            <span class="chip">
+              <span class="dot bg-emerald-500"></span>
+              Personal Journey
+            </span>
+          </div>
+
+          <div class="mt-6 space-y-5 text-sm sm:text-base leading-8 text-slate-600">
+            <p>
+              I’m Birate Kabanza Arthur, a data-driven enthusiast with a curious mind and an international academic journey. I began pursuing my studies in Petroleum Engineering in China, where I built a strong analytical and technical foundation.
+            </p>
+
+            <p>
+              I later moved to Belgium to pursue Applied Computer Science with an Artificial Intelligence track at Thomas More University of Applied Sciences, where I deepened my expertise in data analysis, visualization, and intelligent systems.
+            </p>
+
+            <p>
+              Today, my focus is on transforming data into meaningful visual insights. I combine analytical thinking with visualization techniques to reveal trends, patterns, and opportunities that support informed decision-making.
+            </p>
+          </div>
+        </section>
+
+        <section class="glass rounded-[1.75rem] p-6 sm:p-8 lg:p-10">
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <h2 class="text-2xl font-semibold text-slate-900">Passions</h2>
+              <p class="mt-2 text-sm text-slate-600">
+                Interests that shape how I think, learn, and work.
+              </p>
+            </div>
+            <span class="chip">
+              <span class="dot bg-amber-500"></span>
+              Beyond Work
+            </span>
+          </div>
+
+          <div class="mt-8 grid gap-6 sm:grid-cols-2">
+            <article class="passion-card soft-card rounded-[1.5rem] p-6">
+              <h3 class="text-lg font-semibold text-slate-900">Reading</h3>
+              <p class="mt-3 text-sm leading-7 text-slate-600">
+                I enjoy reading non-fiction books that challenge my thinking and encourage discipline, resilience, and authenticity.
+              </p>
+            </article>
+
+            <article class="passion-card soft-card rounded-[1.5rem] p-6">
+              <h3 class="text-lg font-semibold text-slate-900">Travel & Culture</h3>
+              <p class="mt-3 text-sm leading-7 text-slate-600">
+                Exploring different cultures broadens my perspective and influences the way I approach collaboration, data interpretation, and problem-solving.
+              </p>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <!-- RIGHT -->
+      <aside class="space-y-8">
+        <section class="info-card glass rounded-[1.75rem] p-6 sm:p-8">
+          <div class="flex justify-center">
+            <div class="relative">
+              <img
+                src="assets/profile2.png"
+                alt="Birate Kabanza Arthur"
+                class="profile-image w-[380px] max-w-full rounded-[1.5rem] object-cover"
+              />
+              <div class="absolute inset-0 -z-10 translate-x-6 translate-y-6 rounded-[1.5rem] bg-slate-900/5 blur-2xl"></div>
+            </div>
+          </div>
+
+          <div class="mt-8 text-center">
+            <p class="text-2xl font-semibold text-slate-900">Birate Kabanza Arthur</p>
+            <p class="mt-2 text-sm font-light tracking-wide text-slate-600">
+              Data Analysis • Data Visualization • AI
+            </p>
+          </div>
+
+          <div class="mt-6 space-y-3 text-sm text-slate-600">
+            <p><span class="font-semibold text-slate-900">Location:</span> Belgium</p>
+            <p><span class="font-semibold text-slate-900">Languages:</span> French (Native), English (Fluent)</p>
+            <p>
+              <span class="font-semibold text-slate-900">Email:</span>
+              <a href="mailto:arthurbirate98@gmail.com" class="transition hover:text-slate-900">
+                arthurbirate98@gmail.com
+              </a>
+            </p>
+          </div>
+        </section>
+
+        <section class="glass rounded-[1.75rem] p-6 sm:p-8">
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <h2 class="text-2xl font-semibold text-slate-900">Core Skills</h2>
+              <p class="mt-2 text-sm text-slate-600">
+                Main tools and areas of expertise.
+              </p>
+            </div>
+            <span class="chip">
+              <span class="dot bg-sky-500"></span>
+              Skill Set
+            </span>
+          </div>
+
+          <div class="mt-8 space-y-5">
+            <article class="skill-card soft-card rounded-[1.25rem] p-5">
+              <h3 class="text-base font-semibold text-slate-900">Data Visualization</h3>
+              <p class="mt-2 text-sm leading-7 text-slate-600">
+                Tableau • Power BI • Qlik Sense • Excel • Grafana
+              </p>
+            </article>
+
+            <article class="skill-card soft-card rounded-[1.25rem] p-5">
+              <h3 class="text-base font-semibold text-slate-900">Programming & Development</h3>
+              <p class="mt-2 text-sm leading-7 text-slate-600">
+                Python • SQL • Django
+              </p>
+            </article>
+
+            <article class="skill-card soft-card rounded-[1.25rem] p-5">
+              <h3 class="text-base font-semibold text-slate-900">Data Engineering & Infrastructure</h3>
+              <p class="mt-2 text-sm leading-7 text-slate-600">
+                ETL Pipelines • Docker • Kubernetes • Elasticsearch • Logstash
+              </p>
+            </article>
+
+            <article class="skill-card soft-card rounded-[1.25rem] p-5">
+              <h3 class="text-base font-semibold text-slate-900">Artificial Intelligence</h3>
+              <p class="mt-2 text-sm leading-7 text-slate-600">
+                Machine Learning • YOLO • XGBoost • Feature Engineering
+              </p>
+            </article>
+          </div>
+        </section>
+      </aside>
     </section>
 
     <!-- FOOTER -->
-    <footer class="mt-16 text-sm text-slate-500">
-      <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <p>© <span id="year"></span> Birate Kabanza Arthur.</p>
-        <div class="flex gap-4">
-          <a class="hover:text-slate-900" href="#">Email</a>
-          <a class="hover:text-slate-900" href="#">LinkedIn</a>
-          <a class="hover:text-slate-900" href="#">GitHub</a>
+    <footer class="mt-16">
+      <div class="glass rounded-[1.5rem] px-6 py-6 sm:px-8">
+        <div class="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <p class="text-sm font-medium text-slate-900">Birate Kabanza Arthur</p>
+            <p class="mt-1 text-sm text-slate-500">
+              Turning data into meaningful stories, insights, and intelligent solutions.
+            </p>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-4 text-sm text-slate-600">
+            <span>© <span id="year"></span></span>
+            <a
+              href="mailto:arthurbirate98@gmail.com?subject=Regarding%20Your%20Portfolio"
+              class="transition hover:text-slate-900"
+            >
+              Email
+            </a>
+            <a
+              href="https://www.linkedin.com/in/arthurbirate/"
+              class="transition hover:text-slate-900"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="https://github.com/arthurbirate"
+              class="transition hover:text-slate-900"
+            >
+              GitHub
+            </a>
+          </div>
         </div>
       </div>
     </footer>
-
   </main>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
-
 </body>
 </html>

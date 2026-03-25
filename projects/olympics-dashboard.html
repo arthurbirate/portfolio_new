@@ -15,261 +15,513 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
-      :root { --card: rgba(255, 255, 255, 0.75); }
+      :root {
+        --card: rgba(255, 255, 255, 0.72);
+        --border: rgba(255, 255, 255, 0.5);
+        --text: #0f172a;
+        --muted: #475569;
+      }
 
-      .page {
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        color: var(--text);
         background:
-          radial-gradient(1000px 600px at 15% -10%, rgba(245, 158, 11, 0.10), transparent 60%),
-          radial-gradient(900px 500px at 90% 0%, rgba(59, 130, 246, 0.08), transparent 60%),
-          linear-gradient(180deg, #f3f5f9 0%, #eef2f7 60%, #f6f7fb 100%);
+          radial-gradient(900px 500px at 10% -10%, rgba(59, 130, 246, 0.16), transparent 60%),
+          radial-gradient(800px 500px at 95% 0%, rgba(168, 85, 247, 0.12), transparent 60%),
+          radial-gradient(700px 500px at 50% 100%, rgba(34, 197, 94, 0.10), transparent 60%),
+          linear-gradient(180deg, #f8fafc 0%, #f3f6fb 45%, #eef4ff 100%);
+        min-height: 100vh;
       }
 
-      .card {
+      .serif {
+        font-family: "Playfair Display", serif;
+      }
+
+      .glass {
         background: var(--card);
-        backdrop-filter: blur(12px);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid var(--border);
         box-shadow:
-          0 14px 30px rgba(2, 6, 23, 0.08),
-          0 1px 0 rgba(255, 255, 255, 0.8) inset;
+          0 18px 40px rgba(15, 23, 42, 0.08),
+          0 1px 0 rgba(255, 255, 255, 0.75) inset;
       }
 
-      .hairline {
+      .soft-card {
+        background: rgba(255, 255, 255, 0.82);
+        border: 1px solid rgba(255, 255, 255, 0.7);
+        box-shadow:
+          0 14px 30px rgba(15, 23, 42, 0.06),
+          0 1px 0 rgba(255, 255, 255, 0.9) inset;
+      }
+
+      .section-line {
         height: 1px;
-        background: linear-gradient(to right, transparent, rgba(15, 23, 42, 0.15), transparent);
+        background: linear-gradient(to right, transparent, rgba(100, 116, 139, 0.3), transparent);
+      }
+
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        padding: 0.45rem 0.8rem;
+        border-radius: 999px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        background: rgba(255, 255, 255, 0.78);
+        color: #334155;
+        border: 1px solid rgba(148, 163, 184, 0.18);
+        box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
+      }
+
+      .dot {
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 999px;
+        display: inline-block;
+      }
+
+      .nav-link {
+        position: relative;
+        transition: all 0.25s ease;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        left: 12px;
+        right: 12px;
+        bottom: 6px;
+        height: 2px;
+        border-radius: 999px;
+        background: linear-gradient(to right, #3b82f6, #8b5cf6);
+        transform: scaleX(0);
+        transition: transform 0.25s ease;
+      }
+
+      .nav-link:hover::after,
+      .nav-link.active::after {
+        transform: scaleX(1);
+      }
+
+      .hero-grid {
+        background-image:
+          linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+        background-size: 28px 28px;
+        background-position: center;
+      }
+
+      .content-card,
+      .info-card,
+      .screenshot-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .content-card:hover,
+      .info-card:hover,
+      .screenshot-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 22px 40px rgba(15, 23, 42, 0.08);
+      }
+
+      .image-frame {
+        overflow: hidden;
+        border-radius: 1rem;
+        border: 1px solid rgba(226, 232, 240, 1);
+        background: white;
+        box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+      }
+
+      .image-frame img {
+        transition: transform 0.5s ease;
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .image-frame:hover img {
+        transform: scale(1.015);
+      }
+
+      .btn-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        font-weight: 600;
+        transition: all 0.25s ease;
+      }
+
+      .btn-link:hover {
+        transform: translateX(2px);
+      }
+
+      .primary-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.9rem;
+        padding: 0.8rem 1.1rem;
+        font-size: 0.95rem;
+        font-weight: 600;
+        transition: all 0.25s ease;
+      }
+
+      .primary-btn:hover {
+        transform: translateY(-1px);
+      }
+
+      .fade-up {
+        animation: fadeUp 0.7s ease both;
+      }
+
+      .fade-up-delay {
+        animation: fadeUp 0.95s ease both;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(18px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 640px) {
+        .hero-title {
+          font-size: 2.3rem;
+          line-height: 1.05;
+        }
       }
     </style>
   </head>
 
-  <body class="min-h-screen page font-[Inter] text-slate-800">
+  <body class="text-slate-800">
     <!-- HEADER -->
-    <header class="sticky top-0 z-50 bg-white/70 backdrop-blur border-b border-slate-200/70">
-      <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-        <a href="../index.html" class="flex items-center gap-3">
-          <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-slate-900 text-white font-semibold">
+    <header class="sticky top-0 z-50 border-b border-white/40 bg-white/55 backdrop-blur-xl">
+      <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+        <a href="../index.html" class="group flex items-center gap-3">
+          <span class="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-slate-900 via-blue-900 to-slate-700 text-sm font-bold text-white shadow-lg shadow-slate-900/20 transition group-hover:scale-105">
             BA
           </span>
           <div class="leading-tight">
-            <p class="font-semibold text-slate-900">Birate Kabanza Arthur</p>
-            <p class="text-xs text-slate-600">Data Analysis • Data Visualization</p>
+            <p class="text-sm font-semibold text-slate-900 sm:text-base">Birate Kabanza Arthur</p>
+            <p class="text-xs text-slate-500 sm:text-sm">Data Analysis • Data Visualization</p>
           </div>
         </a>
 
-        <nav class="flex items-center gap-2">
-          <a href="../index.html" class="rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-100">Home</a>
-          <a href="../projects.html" class="rounded-lg px-3 py-2 text-sm bg-slate-900 text-white">Projects</a>
+        <nav class="flex items-center gap-1">
+          <a href="../index.html" class="nav-link rounded-xl px-4 py-2 text-sm text-slate-700 hover:bg-white/70">Home</a>
+          <a href="../projects.html" class="nav-link active rounded-xl bg-slate-900 px-4 py-2 text-sm text-white shadow-lg shadow-slate-900/15">Projects</a>
         </nav>
       </div>
     </header>
 
     <!-- MAIN -->
-    <main class="mx-auto max-w-6xl px-4 pb-16 pt-16">
-      <section class="card rounded-2xl p-8 sm:p-12">
-
-        <!-- Top heading (full width) -->
-        <div>
-          <div class="flex flex-wrap items-center justify-between gap-4">
-            <p class="text-sm text-slate-600">
-              <a href="../projects.html" class="hover:text-slate-900">Projects</a>
-              <span class="mx-2 text-slate-300">/</span>
-              <span class="text-slate-900 font-medium">Olympics Dashboard (Qlik Sense)</span>
-            </p>
-
-            <span class="text-xs uppercase tracking-wide font-semibold text-slate-500">
-              Business Intelligence • Qlik Sense
-            </span>
-          </div>
-
-          <h1 class="mt-5 text-4xl sm:text-5xl font-['Playfair_Display'] font-semibold text-slate-900">
-            Olympics Dashboard (Qlik Sense)
-          </h1>
-
-          <p class="mt-4 max-w-3xl text-slate-600 font-light leading-relaxed">
-            This project focused on building an interactive Qlik Sense dashboard analyzing Olympic Games data (1980–2022),
-            enabling medal tracking, gender analysis, sport-specific drilldowns, and athlete-level insights.
-          </p>
-
-          <div class="mt-8 flex flex-wrap gap-3">
-            <!-- Replace links when ready -->
-            <a
-              href="https://youtu.be/UKvdi1y1dJQ"
-              class="rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-800 transition"
-            >
-              Watch Demo
-            </a>
-
-            <a
-              href="../assets/Olympic_dashboard/OlympicGames functional specification.pdf"  download
-              class="rounded-lg bg-white px-4 py-2 text-sm font-medium text-slate-900 ring-1 ring-slate-200 hover:bg-slate-50 transition"
-            >
-              Functional Specification Document
-            </a>
-          </div>
-
-          <div class="mt-10 hairline"></div>
+    <main class="mx-auto max-w-7xl px-4 pb-16 pt-10 sm:px-6 lg:px-8 lg:pt-14">
+      <!-- HERO -->
+      <section class="glass hero-grid relative overflow-hidden rounded-[2rem] px-6 py-10 sm:px-10 sm:py-14 lg:px-14">
+        <div class="absolute inset-0 pointer-events-none">
+          <div class="absolute -left-12 top-8 h-40 w-40 rounded-full bg-blue-400/20 blur-3xl"></div>
+          <div class="absolute right-0 top-0 h-44 w-44 rounded-full bg-violet-400/20 blur-3xl"></div>
+          <div class="absolute bottom-0 left-1/3 h-36 w-36 rounded-full bg-emerald-400/20 blur-3xl"></div>
         </div>
 
-        <!-- TWO-COLUMN LAYOUT -->
-        <div class="mt-10 grid gap-10 lg:grid-cols-[380px_1fr]">
+        <div class="relative z-10 grid gap-8 lg:grid-cols-[1.3fr_0.7fr] lg:items-end">
+          <div class="fade-up">
+            <p class="text-sm text-slate-600">
+              <a href="../projects.html" class="transition hover:text-slate-900">Projects</a>
+              <span class="mx-2 text-slate-300">/</span>
+              <span class="font-medium text-slate-900">Olympics Dashboard (Qlik Sense)</span>
+            </p>
 
-          <!-- LEFT COLUMN (STICKY SIDEBAR) -->
-          <aside class="lg:sticky lg:top-24 self-start space-y-8">
+            <div class="mt-5 flex flex-wrap gap-3">
+              <span class="chip">
+                <span class="dot bg-blue-500"></span>
+                Business Intelligence
+              </span>
+              <span class="chip">
+                <span class="dot bg-violet-500"></span>
+                Qlik Sense
+              </span>
+              <span class="chip">
+                <span class="dot bg-emerald-500"></span>
+                Sports Analytics
+              </span>
+            </div>
 
-            <!-- OBJECTIVE -->
-            <article class="rounded-xl bg-white p-8 shadow-sm">
-              <h2 class="text-xl font-semibold text-slate-900">Objective</h2>
+            <h1 class="hero-title mt-6 max-w-4xl text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl serif">
+              Olympics Dashboard
+              <span class="bg-gradient-to-r from-slate-900 via-blue-700 to-violet-600 bg-clip-text text-transparent">
+                (Qlik Sense)
+              </span>
+            </h1>
 
-              <p class="mt-4 text-sm text-slate-600 font-light leading-relaxed">
-                The objective of this project was to design an interactive Qlik Sense dashboard analyzing Olympic Games data (1980–2022).
-              </p>
+            <p class="mt-5 max-w-3xl text-base leading-7 text-slate-600 sm:text-lg">
+              This project focused on building an interactive Qlik Sense dashboard analyzing Olympic Games data from 1980 to 2022, enabling medal tracking, gender analysis, sport-specific drilldowns, and athlete-level insights.
+            </p>
 
-              <ul class="mt-5 space-y-2 text-sm text-slate-600 font-light list-disc pl-5">
-                <li>Trends in medal distribution by country and sport</li>
-                <li>Gender performance — male vs female participation and success</li>
-                <li>Sport-specific breakdowns with drill-through capabilities</li>
-                <li>Athlete profiles with medal history</li>
-                <li>Age and gender dynamics across events</li>
-              </ul>
-            </article>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a
+                href="https://youtu.be/UKvdi1y1dJQ"
+                class="primary-btn bg-slate-900 text-white shadow-lg shadow-slate-900/15 hover:bg-slate-800"
+              >
+                Watch Demo
+              </a>
 
-            <!-- TECHNOLOGIES -->
-            <article class="rounded-xl bg-white p-8 shadow-sm">
-              <h2 class="text-xl font-semibold text-slate-900">Technologies Used</h2>
+              <a
+                href="../assets/Olympic_dashboard/OlympicGames functional specification.pdf"
+                download
+                class="primary-btn bg-white text-slate-900 ring-1 ring-slate-200 hover:bg-slate-50"
+              >
+                Functional Specification Document
+              </a>
+            </div>
+          </div>
 
-              <ul class="mt-5 space-y-2 text-sm text-slate-600 font-light">
-                <li><span class="font-medium text-slate-900">Qlik Sense</span></li>
-                <li><span class="font-medium text-slate-900">Qlik Load Script</span></li>
-                <li><span class="font-medium text-slate-900">Data Modeling</span></li>
-                <li><span class="font-medium text-slate-900">Set Analysis</span></li>
-                <li><span class="font-medium text-slate-900">Data Visualization</span></li>
-              </ul>
-            </article>
-
-            <!-- LINKS -->
-            <article class="rounded-xl bg-white p-8 shadow-sm">
-              <h2 class="text-xl font-semibold text-slate-900">Links</h2>
-
-              <div class="mt-4 flex flex-col gap-3 text-sm font-medium">
-                <a
-                  href="../projects.html"
-                  class="text-slate-900 underline underline-offset-4 hover:text-slate-700 transition"
-                >
-                  ← Back to Projects
-                </a>
-
-                <!-- Replace when you have real links -->
-                <a
-                  href="#"
-                  class="text-slate-500 hover:text-slate-900 transition"
-                >
-                  Watch Demo
-                </a>
-
-                <a
-                  href="#"
-                  class="text-slate-500 hover:text-slate-900 transition"
-                >
-                  Functional Specification Document
-                </a>
-              </div>
-            </article>
-
-          </aside>
-
-          <!-- RIGHT COLUMN (MAIN CONTENT) -->
-          <div class="space-y-10">
-
-           <!-- SCREENSHOTS -->
-<section class="rounded-xl bg-white p-8 shadow-sm">
-    <div class="flex flex-wrap items-center justify-between gap-4">
-      <h2 class="text-2xl font-semibold text-slate-900">Dashboard Screenshots</h2>
-      <span class="text-xs uppercase tracking-wide font-semibold text-slate-500">Qlik Sense</span>
-    </div>
-  
-    <p class="mt-2 text-sm text-slate-600 font-light">
-      Representative views from the multi-sheet dashboard application.
-    </p>
-  
-    <!-- BIG screenshots: one per row (full width) -->
-    <div class="mt-8 space-y-8">
-      <figure class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
-        <img
-          src="../assets/Olympic_dashboard/ol_1.png"
-          alt="Olympics Dashboard Screenshot 1"
-          class="w-full h-auto"
-        />
-      </figure>
-  
-      <figure class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
-        <img
-          src="../assets/Olympic_dashboard/ol_2.png"
-          alt="Olympics Dashboard Screenshot 2"
-          class="w-full h-auto"
-        />
-      </figure>
-    </div>
-  </section>
-
-            <!-- DATASET -->
-            <section class="rounded-xl bg-white p-8 shadow-sm">
-              <h2 class="text-2xl font-semibold text-slate-900">Dataset</h2>
-
-              <p class="mt-4 text-sm text-slate-600 font-light leading-relaxed">
-                The dataset covered athletes, medals, countries, sports, and events (1980–2022). Preprocessing was done in Qlik’s load editor:
-              </p>
-
-              <ul class="mt-5 space-y-2 text-sm text-slate-600 font-light list-disc pl-5">
-                <li>Standardized inconsistent country codes (e.g., USSR → Russia)</li>
-                <li>Cleaned duplicate or incomplete athlete records</li>
-                <li>Reshaped medal data for time-series analysis</li>
-                <li>Built a star-schema-like model for drill-down performance</li>
-              </ul>
-
-              <p class="mt-4 text-sm text-slate-600 font-light leading-relaxed">
-                These steps ensured smooth and responsive dashboard performance even with large datasets.
-              </p>
-            </section>
-
-            <!-- RESULTS -->
-            <section class="rounded-xl bg-white p-8 shadow-sm">
-              <h2 class="text-2xl font-semibold text-slate-900">Results</h2>
-
-              <p class="mt-4 text-sm text-slate-600 font-light leading-relaxed">
-                The final Qlik Sense application combined medal tracking, gender analysis, sport-specific insights, and athlete-level details:
-              </p>
-
-              <ul class="mt-5 space-y-2 text-sm text-slate-600 font-light list-disc pl-5">
-                <li>Dynamic medal tracking with filters for year, country, gender, and sport</li>
-                <li>Gender analysis highlighting increased female participation since the 1980s</li>
-                <li>Sport-specific trends showing shifts in dominance across athletics, swimming, and gymnastics</li>
-                <li>Athlete profiles with medal totals and career histories</li>
-                <li>Age analysis showing younger gymnasts excel vs older endurance athletes</li>
-              </ul>
-            </section>
-
-            <!-- KEY LEARNINGS -->
-            <section class="rounded-xl bg-white p-8 shadow-sm">
-              <h2 class="text-2xl font-semibold text-slate-900">Key Learnings</h2>
-
-              <ul class="mt-5 space-y-2 text-sm text-slate-600 font-light list-disc pl-5">
-                <li>Mastered Qlik load scripting for data cleaning and modeling</li>
-                <li>Applied set analysis for advanced filtering and dynamic measures</li>
-                <li>Optimized performance with efficient joins and pre-aggregation</li>
-                <li>Designed multi-sheet dashboards with KPI summaries and drilldowns</li>
-                <li>Improved BI storytelling for both casual users and analysts</li>
-                <li>Developed strong understanding of Olympic data trends</li>
-              </ul>
-            </section>
-
+          <div class="fade-up-delay grid grid-cols-2 gap-4">
+            <div class="soft-card rounded-2xl p-5">
+              <p class="text-2xl font-bold text-slate-900">1980–2022</p>
+              <p class="mt-1 text-sm text-slate-600">Coverage period</p>
+            </div>
+            <div class="soft-card rounded-2xl p-5">
+              <p class="text-2xl font-bold text-slate-900">Multi-sheet</p>
+              <p class="mt-1 text-sm text-slate-600">Dashboard app</p>
+            </div>
+            <div class="soft-card rounded-2xl p-5">
+              <p class="text-2xl font-bold text-slate-900">Qlik</p>
+              <p class="mt-1 text-sm text-slate-600">Interactive analysis</p>
+            </div>
+            <div class="soft-card rounded-2xl p-5">
+              <p class="text-2xl font-bold text-slate-900">Olympics</p>
+              <p class="mt-1 text-sm text-slate-600">Performance insights</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <footer class="mt-16 text-sm text-slate-500">
-        <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <p>© <span id="year"></span> Birate Kabanza Arthur.</p>
-          <div class="flex gap-4">
-            <a class="hover:text-slate-900" href="#">Email</a>
-            <a class="hover:text-slate-900" href="#">LinkedIn</a>
-            <a class="hover:text-slate-900" href="#">GitHub</a>
+      <div class="section-line my-8"></div>
+
+      <!-- CONTENT -->
+      <section class="grid gap-8 lg:grid-cols-[360px_1fr] xl:grid-cols-[380px_1fr]">
+        <!-- SIDEBAR -->
+        <aside class="lg:sticky lg:top-24 self-start space-y-6">
+          <article class="info-card glass rounded-[1.5rem] p-7">
+            <h2 class="text-xl font-semibold text-slate-900">Objective</h2>
+
+            <p class="mt-4 text-sm leading-7 text-slate-600">
+              The objective of this project was to design an interactive Qlik Sense dashboard analyzing Olympic Games data across multiple dimensions.
+            </p>
+
+            <ul class="mt-5 space-y-3 pl-5 text-sm leading-7 text-slate-600 list-disc">
+              <li>Track trends in medal distribution by country and sport</li>
+              <li>Analyze male versus female participation and success</li>
+              <li>Support sport-specific breakdowns with drill-through exploration</li>
+              <li>Build athlete profiles with medal history</li>
+              <li>Examine age and gender dynamics across events</li>
+            </ul>
+          </article>
+
+          <article class="info-card glass rounded-[1.5rem] p-7">
+            <h2 class="text-xl font-semibold text-slate-900">Technologies Used</h2>
+
+            <ul class="mt-5 space-y-3 text-sm leading-7 text-slate-600">
+              <li><span class="font-semibold text-slate-900">Qlik Sense</span> — dashboard building and interactive exploration</li>
+              <li><span class="font-semibold text-slate-900">Qlik Load Script</span> — data cleaning and transformation</li>
+              <li><span class="font-semibold text-slate-900">Data Modeling</span> — structured relationships for drilldowns</li>
+              <li><span class="font-semibold text-slate-900">Set Analysis</span> — dynamic filtering and advanced measures</li>
+              <li><span class="font-semibold text-slate-900">Data Visualization</span> — KPI storytelling and multi-view analysis</li>
+            </ul>
+          </article>
+
+          <article class="info-card glass rounded-[1.5rem] p-7">
+            <h2 class="text-xl font-semibold text-slate-900">Links</h2>
+
+            <div class="mt-5 flex flex-col gap-3 text-sm">
+              <a href="../projects.html" class="btn-link text-slate-900">
+                <span>←</span>
+                <span>Back to Projects</span>
+              </a>
+
+              <a href="https://youtu.be/UKvdi1y1dJQ" class="text-slate-500 transition hover:text-slate-900">
+                Watch Demo
+              </a>
+
+              <a
+                href="../assets/Olympic_dashboard/OlympicGames functional specification.pdf"
+                download
+                class="text-slate-500 transition hover:text-slate-900"
+              >
+                Functional Specification Document
+              </a>
+            </div>
+          </article>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <div class="space-y-8">
+          <!-- SCREENSHOTS -->
+          <section class="glass rounded-[1.75rem] p-6 sm:p-8 lg:p-10">
+            <div class="flex flex-wrap items-center justify-between gap-4">
+              <div>
+                <h2 class="text-2xl font-semibold text-slate-900">Dashboard Screenshots</h2>
+                <p class="mt-2 text-sm text-slate-600">
+                  Representative views from the multi-sheet Qlik Sense application.
+                </p>
+              </div>
+              <span class="chip">
+                <span class="dot bg-violet-500"></span>
+                Qlik Sense Views
+              </span>
+            </div>
+
+            <div class="mt-8 space-y-8">
+              <figure class="screenshot-card soft-card rounded-[1.5rem] p-5 sm:p-6">
+                <div class="image-frame">
+                  <img
+                    src="../assets/Olympic_dashboard/ol_1.png"
+                    alt="Olympics Dashboard Screenshot 1"
+                  />
+                </div>
+              </figure>
+
+              <figure class="screenshot-card soft-card rounded-[1.5rem] p-5 sm:p-6">
+                <div class="image-frame">
+                  <img
+                    src="../assets/Olympic_dashboard/ol_2.png"
+                    alt="Olympics Dashboard Screenshot 2"
+                  />
+                </div>
+              </figure>
+            </div>
+          </section>
+
+          <!-- DATASET -->
+          <section class="content-card glass rounded-[1.75rem] p-6 sm:p-8 lg:p-10">
+            <div class="flex flex-wrap items-center justify-between gap-4">
+              <div>
+                <h2 class="text-2xl font-semibold text-slate-900">Dataset</h2>
+                <p class="mt-2 text-sm text-slate-600">
+                  Source preparation and modeling steps used to build a responsive analytical application.
+                </p>
+              </div>
+              <span class="chip">
+                <span class="dot bg-blue-500"></span>
+                Data Preparation
+              </span>
+            </div>
+
+            <p class="mt-5 text-sm leading-7 text-slate-600">
+              The dataset covered athletes, medals, countries, sports, and events from 1980 to 2022. Preprocessing was completed in Qlik’s load editor to prepare the data for structured interactive analysis.
+            </p>
+
+            <ul class="mt-5 space-y-3 pl-5 text-sm leading-7 text-slate-600 list-disc">
+              <li>Standardized inconsistent country codes such as USSR to Russia</li>
+              <li>Cleaned duplicate or incomplete athlete records</li>
+              <li>Reshaped medal data for time-series analysis</li>
+              <li>Built a star-schema-like model for strong drill-down performance</li>
+            </ul>
+
+            <p class="mt-5 text-sm leading-7 text-slate-600">
+              These preparation steps ensured a smoother user experience and better dashboard responsiveness even with large historical datasets.
+            </p>
+          </section>
+
+          <!-- RESULTS -->
+          <section class="content-card glass rounded-[1.75rem] p-6 sm:p-8 lg:p-10">
+            <div class="flex flex-wrap items-center justify-between gap-4">
+              <div>
+                <h2 class="text-2xl font-semibold text-slate-900">Results</h2>
+                <p class="mt-2 text-sm text-slate-600">
+                  Key analytical outputs delivered by the final Qlik Sense application.
+                </p>
+              </div>
+              <span class="chip">
+                <span class="dot bg-emerald-500"></span>
+                Insight Delivery
+              </span>
+            </div>
+
+            <p class="mt-5 text-sm leading-7 text-slate-600">
+              The final application combined medal tracking, gender analysis, sport-specific insights, and athlete-level details into a single interactive environment.
+            </p>
+
+            <ul class="mt-5 space-y-3 pl-5 text-sm leading-7 text-slate-600 list-disc">
+              <li>Dynamic medal tracking with filters for year, country, gender, and sport</li>
+              <li>Gender analysis highlighting increased female participation since the 1980s</li>
+              <li>Sport-specific trends showing shifts in dominance across athletics, swimming, and gymnastics</li>
+              <li>Athlete profiles with medal totals and career histories</li>
+              <li>Age analysis showing different performance patterns across event types</li>
+            </ul>
+          </section>
+
+          <!-- KEY LEARNINGS -->
+          <section class="content-card glass rounded-[1.75rem] p-6 sm:p-8 lg:p-10">
+            <div class="flex flex-wrap items-center justify-between gap-4">
+              <div>
+                <h2 class="text-2xl font-semibold text-slate-900">Key Learnings</h2>
+                <p class="mt-2 text-sm text-slate-600">
+                  Technical and analytical capabilities strengthened through this project.
+                </p>
+              </div>
+              <span class="chip">
+                <span class="dot bg-amber-500"></span>
+                Growth & Skills
+              </span>
+            </div>
+
+            <ul class="mt-6 space-y-3 pl-5 text-sm leading-7 text-slate-600 list-disc">
+              <li>Mastered Qlik load scripting for data cleaning and modeling</li>
+              <li>Applied set analysis for advanced filtering and dynamic measures</li>
+              <li>Optimized performance with efficient joins and pre-aggregation</li>
+              <li>Designed multi-sheet dashboards with KPI summaries and drilldowns</li>
+              <li>Improved BI storytelling for both casual users and analysts</li>
+              <li>Developed a stronger understanding of Olympic performance trends</li>
+            </ul>
+          </section>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="mt-16">
+        <div class="glass rounded-[1.5rem] px-6 py-6 sm:px-8">
+          <div class="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+            <div>
+              <p class="text-sm font-medium text-slate-900">Birate Kabanza Arthur</p>
+              <p class="mt-1 text-sm text-slate-500">
+                Turning data into meaningful stories, insights, and intelligent solutions.
+              </p>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-4 text-sm text-slate-600">
+              <span>© <span id="year"></span></span>
+              <a
+                href="mailto:arthurbirate98@gmail.com?subject=Regarding%20Your%20Portfolio"
+                class="transition hover:text-slate-900"
+              >
+                Email
+              </a>
+              <a
+                href="https://www.linkedin.com/in/arthurbirate/"
+                class="transition hover:text-slate-900"
+              >
+                LinkedIn
+              </a>
+              <a
+                href="https://github.com/arthurbirate"
+                class="transition hover:text-slate-900"
+              >
+                GitHub
+              </a>
+            </div>
           </div>
         </div>
       </footer>
